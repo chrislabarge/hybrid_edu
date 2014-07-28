@@ -77,7 +77,7 @@ end
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+ gem 'unicorn'
 
 group :production do
   gem 'pg', '0.15.1'
