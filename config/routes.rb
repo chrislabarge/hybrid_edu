@@ -1,8 +1,11 @@
 HybridEdu::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/games"
-  get "static_pages/about"
-  get "static_pages/contact"
+get "users/new"
+
+root  'static_pages#home'
+match '/signup',    to:	'users#new',							via: 'get'
+match '/games',   	to: 'static_pages#games',   	via: 'get'
+match '/about',   	to: 'static_pages#about',   	via: 'get'
+match '/contact',   to: 'static_pages#contact',   via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
