@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)  #<--This attribute method is defined blow
 		if @user.save									# in the private section of the controller
+			sign_in @user
 			flash[:success] = "Welcome to the Sample App!"
 			redirect_to @user
 		else

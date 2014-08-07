@@ -1,9 +1,11 @@
 HybridEdu::Application.routes.draw do
 resources :users
-
+resources :sessions, only: [:new, :create, :destroy]  #this is so not all the Restful routes like 'show' and 'edit' dont get passed sense we have no need for them for the sessions (token)
 
 root  'static_pages#home'
 match '/signup',    to:	'users#new',							via: 'get'
+match '/signin',    to: 'sessions#new',						via: 'get'
+match '/signout',   to: 'sessions#destroy',				via: 'delete' #delete here because it destroys the session in order to sign out
 match '/games',   	to: 'static_pages#games',   	via: 'get'
 match '/about',   	to: 'static_pages#about',   	via: 'get'
 match '/contact',   to: 'static_pages#contact',   via: 'get'

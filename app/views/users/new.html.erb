@@ -5,7 +5,7 @@
 	<div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
 		<%= form_for(@user) do |f| %>
 			<%= render 'shared/error_messages' %> <!--This is not the final implemantation of this...they change it in the turorial in section 10.3.2-->
-			<%= f.label :name %>
+			<%= f.label :name %>                  <!--The shared/error_messages is linked to the shared directory within the app-->
 			<%= f.text_field :name%>
 			
 			<%= f.label :email%>
