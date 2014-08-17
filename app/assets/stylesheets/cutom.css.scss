@@ -7,7 +7,11 @@
 
 $grayMediumLight: #eaeaea;
 $grayLighter: #E6E6E6;
-
+$green: #76FF52;
+$blue: #32DAE8;
+$purple: #7343FF;
+$red: #EA324D;
+$orange: #FFAE36;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -68,9 +72,9 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.9em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-align: center;
   font-weight: normal;
   color: #999;
@@ -154,7 +158,7 @@ input {
 /* Carousel base class */
 .carousel {
   height: 300px;
-  margin-bottom: 80px;
+  margin-bottom: 50px; /*------------This is bottom of carasel to content*/
 
 }
 /* Since positioning the image, we need to help out the caption */
@@ -176,11 +180,19 @@ input {
   height: 300px;
 }
 
+.bar {
+	background-color: #72ff5e;
+	height: 50px;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
-@media (min-width: 580px) {
+@media (min-width: 768px) {
 
   /* Navbar positioning foo */
   .navbar-wrapper {
@@ -202,6 +214,7 @@ input {
 	
 	.carousel {
   height: 500px;
+
 	}
   .carousel .item {
   	height: 500px;
@@ -221,7 +234,15 @@ input {
   .featurette-heading {
     font-size: 50px;
   }
+
+	.bar {
+		height: 80px;
+	}
+	
 }
+
+
+
 
 @media (min-width: 992px) {
   .featurette-heading {
@@ -246,4 +267,198 @@ input {
 			border-bottom: 1px solid $grayLighter
 		}
 	}
+}
+
+/* ----- This is experimental stuff ALWAYS AT THE BOTTOM -------   */
+
+
+
+.market_bar{
+	background-color:#dfff7d;
+	border-radius: 20px;
+}
+
+.icon {
+	border-radius: 20%;
+}
+
+#green {
+	background-color: $green
+}
+
+#blue{
+	background-color: $blue
+}
+
+#purple{
+	background-color: $purple
+}
+
+#red {
+	background-color: $red
+}
+
+#orange{
+	background-color: $orange
+}
+
+#circle_first {
+ border: 3.5px solid $green;
+}
+
+#circle_middle {
+	border: 3.5px solid $blue;
+}
+#circle_last {
+	border: 3.5px solid $orange;
+}
+
+
+/* ---------GREEN BUTTON YO-----------------*/
+
+.btn-green { 
+  color: #FFFFFF; 
+  background-color: #76FF52; 
+  border-color: #76FF52; 
+	font-size: 1.5em;
+} 
+ 
+.btn-green:hover, 
+.btn-green:focus, 
+.btn-green:active, 
+.btn-green.active, 
+.open .dropdown-toggle.btn-green { 
+  color: #FFFFFF; 
+  background-color: #13F022; 
+  border-color: #76FF52; 
+} 
+ 
+.btn-green:active, 
+.btn-green.active, 
+.open .dropdown-toggle.btn-green { 
+  background-image: none; 
+} 
+ 
+.btn-green.disabled, 
+.btn-green[disabled], 
+fieldset[disabled] .btn-green, 
+.btn-green.disabled:hover, 
+.btn-green[disabled]:hover, 
+fieldset[disabled] .btn-green:hover, 
+.btn-green.disabled:focus, 
+.btn-green[disabled]:focus, 
+fieldset[disabled] .btn-green:focus, 
+.btn-green.disabled:active, 
+.btn-green[disabled]:active, 
+fieldset[disabled] .btn-green:active, 
+.btn-green.disabled.active, 
+.btn-green[disabled].active, 
+fieldset[disabled] .btn-green.active { 
+  background-color: #76FF52; 
+  border-color: #76FF52; 
+} 
+ 
+.btn-green .badge { 
+  color: #76FF52; 
+  background-color: #FFFFFF; 
+}
+
+/* ---------BLUE BUTTON YO-----------------*/
+
+.btn-blue { 
+  color: #FFFFFF; 
+  background-color: #32DAE8; 
+  border-color: #32DAE8; 
+	font-size: 1.5em;
+} 
+ 
+.btn-blue:hover, 
+.btn-blue:focus, 
+.btn-blue:active, 
+.btn-blue.active, 
+.open .dropdown-toggle.btn-blue { 
+  color: #FFFFFF; 
+  background-color: #13CFF0; 
+  border-color: #32DAE8; 
+} 
+ 
+.btn-blue:active, 
+.btn-blue.active, 
+.open .dropdown-toggle.btn-blue { 
+  background-image: none; 
+} 
+ 
+.btn-blue.disabled, 
+.btn-blue[disabled], 
+fieldset[disabled] .btn-blue, 
+.btn-blue.disabled:hover, 
+.btn-blue[disabled]:hover, 
+fieldset[disabled] .btn-blue:hover, 
+.btn-blue.disabled:focus, 
+.btn-blue[disabled]:focus, 
+fieldset[disabled] .btn-blue:focus, 
+.btn-blue.disabled:active, 
+.btn-blue[disabled]:active, 
+fieldset[disabled] .btn-blue:active, 
+.btn-blue.disabled.active, 
+.btn-blue[disabled].active, 
+fieldset[disabled] .btn-blue.active { 
+  background-color: #32DAE8; 
+  border-color: #32DAE8; 
+} 
+ 
+.btn-blue .badge { 
+  color: #32DAE8; 
+  background-color: #FFFFFF; 
+}
+
+
+
+/* ---------ORANGE BUTTON YO-----------------*/
+
+.btn-orange { 
+  color: #FFFFFF; 
+  background-color: #FFAE36; 
+  border-color: #FFAE36; 
+	font-size: 1.5em;
+} 
+ 
+.btn-orange:hover, 
+.btn-orange:focus, 
+.btn-orange:active, 
+.btn-orange.active, 
+.open .dropdown-toggle.btn-orange { 
+  color: #FFFFFF; 
+  background-color: #F08C13; 
+  border-color: #FFAE36; 
+} 
+ 
+.btn-orange:active, 
+.btn-orange.active, 
+.open .dropdown-toggle.btn-orange { 
+  background-image: none; 
+} 
+ 
+.btn-orange.disabled, 
+.btn-orange[disabled], 
+fieldset[disabled] .btn-orange, 
+.btn-orange.disabled:hover, 
+.btn-orange[disabled]:hover, 
+fieldset[disabled] .btn-orange:hover, 
+.btn-orange.disabled:focus, 
+.btn-orange[disabled]:focus, 
+fieldset[disabled] .btn-orange:focus, 
+.btn-orange.disabled:active, 
+.btn-orange[disabled]:active, 
+fieldset[disabled] .btn-orange:active, 
+.btn-orange.disabled.active, 
+.btn-orange[disabled].active, 
+fieldset[disabled] .btn-orange.active { 
+  background-color: #FFAE36; 
+  border-color: #FFAE36; 
+} 
+ 
+.btn-orange .badge { 
+  color: #FFAE36; 
+  background-color: #FFFFFF; 
 }

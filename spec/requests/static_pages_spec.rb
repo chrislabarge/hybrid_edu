@@ -57,6 +57,15 @@ describe "Static pages" do
 		it_should_behave_like "all static pages"	
 	end
 	
+	describe 'Printables page' do
+		before {visit printables_path}
+		
+		let(:heading) 	 {'Printable Material'}
+		let(:page_title) {'Printable Material'}
+		
+		it_should_behave_like "all static pages"
+	end
+	
 	it "should have the right links on the layout" do
 		visit root_path
 		click_link "About"
