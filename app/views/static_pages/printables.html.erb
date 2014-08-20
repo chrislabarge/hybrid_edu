@@ -2,9 +2,34 @@
 
 <h1>Printable Materials</h1>
 <div class=row>
-<div class='col-lg-4 center'>
-	<%= image_tag('print_search.jpg', class:"icon") %>
-<h2>Letter Search</h2>
-</div>
+	<div class='col-xs-4 center'>
+	<a href='#' class='tint'>	<%= image_tag('printable_icon.jpg', class:"icon", id:'icon1') %></a>
+		<h4 class='icon_font'>Letter Tracing</h4>
+	</div>
+	
+	<div class='col-xs-4 center'>
+		<div class='tinty'><%= image_tag('printable_icon2.jpg', class:"icon", id:'icon1') %></div>
+		
+		<h4 class='icon_font'>Letter in words</h4>
+	</div>
+	
+	<div class='col-xs-4 center'>
+	<a href="#">	<%= image_tag('printable_icon3.jpg', class:"btn btn-gay icon", id:'icon1') %></a>
+		
+		<h4 class='icon_font'>Letter Search</h4>
+		
+	</div>
 
 </div>
+
+
+
+<script>	
+	$(document).ready(function(){
+		
+		$(".icon_font").velocity("transition.slideLeftIn", { stagger: 250 } );
+		$(".icon").velocity("transition.slideLeftIn", { stagger: 250 } );
+		
+	});
+
+</script>

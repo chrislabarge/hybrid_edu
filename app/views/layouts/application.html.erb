@@ -94,10 +94,41 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
     <script src="../../dist/js/bootstrap.min.js"></script>
     <script src="../../assets/js/docs.min.js"></script>
-	
+		
+		
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="smileModal" data-backdrop="static" >
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content text-center">
+      <%=image_tag("http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/1024px-Smiley.svg.png", height:'200px', width:'200px', id:'smiley')%>
+    	<button type="button" class="btn btn-primary btn-lg" id="next">Next Level</button>
+    </div>
+  </div>
+</div> 
+		
+		<script>
+		 $(document).ready(function(){
+  		
+		 $("#red").click(function(){
+	   
+	  	window.location.replace("/games");
+
+			});
+		});
+		</script>
+		
+   
+
+
+
+<script>
+window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+}, false);
+</script>
+
 	
 </body>
 </html>

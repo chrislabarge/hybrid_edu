@@ -12,6 +12,23 @@ $blue: #32DAE8;
 $purple: #7343FF;
 $red: #EA324D;
 $orange: #FFAE36;
+$gray: #42456E;
+
+$brightGreen: #13F022;
+$darkGreen:  #5ECC42;
+$seethruGreen: rgba(118, 255, 82, 0.35) ;
+
+$brightBlue: #1CBDE8;
+$darkBlue: #1CBDE8;
+
+$brightPurple:#941AFF ;
+$darkPurple:#5527DB;
+
+$brightRed:#EA2323;
+$darkRed:#D6223D;
+
+$brightOrange:#FF9D06 ;
+
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -31,6 +48,10 @@ $orange: #FFAE36;
 
 html {
   overflow-y: scroll; /*Find out what this means*/
+}
+
+a:focus {     /*-- this is to prevent the dotted box from appears on links--*/
+    outline: none; 
 }
 
 body {
@@ -188,72 +209,6 @@ input {
 }
 
 
-
-/* RESPONSIVE CSS
--------------------------------------------------- */
-
-@media (min-width: 768px) {
-
-  /* Navbar positioning foo */
-  .navbar-wrapper {
-    margin-top: 20px;
-  }
-  .navbar-wrapper .container {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  .navbar-wrapper .navbar {
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  /* The navbar becomes detached from the top, so we round the corners */
-  .navbar-wrapper .navbar {
-    border-radius: 4px;
-  }
-	
-	.carousel {
-  height: 500px;
-
-	}
-  .carousel .item {
-  	height: 500px;
-  }
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: 1.4;
-  }
-  
-  .carousel-inner > .item > img {
-  	height:500px
-  }
-		
-  .featurette-heading {
-    font-size: 50px;
-  }
-
-	.bar {
-		height: 80px;
-	}
-	
-}
-
-
-
-
-@media (min-width: 992px) {
-  .featurette-heading {
-    margin-top: 120px;
-  }
-}
-
-.marketing {
-	text-align: center;
-}
-
 /* Users index */
 
 .users {
@@ -272,6 +227,10 @@ input {
 /* ----- This is experimental stuff ALWAYS AT THE BOTTOM -------   */
 
 
+.marketing {
+	text-align: center;
+}
+
 
 .market_bar{
 	background-color:#dfff7d;
@@ -280,30 +239,116 @@ input {
 
 .icon {
 	border-radius: 20%;
+	border: solid 5px $green;
+	height: 100%;
+	width: 100%;
+	display:none;
+	padding: 0px; /*--this is to counter act the padding with the button-*/
+	
 }
+
+.icon:hover {
+	  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+}
+
+
+
+.btn-gay:hover {
+	background-color: black;
+}
+
+#icon1 {
+		
+}
+
+#icon2 {
+
+}
+
+#icon3 {
+
+}
+
+.icon_font {
+	display: none;
+}
+
+
+
+.right_pad {
+	padding-right: 20px;
+}
+
+
+
+
+.tab_backgroundz {
+	border-radius: 60%;
+	width: 80px;
+	height: 80px;
+  margin-left: 10px;
+	margin-top: 10px;
+	cursor: pointer;
+	
+}
+
 
 #green {
-	background-color: $green
+	background-color: $green;
+
+}
+#green:active {
+	
+	background-color: $brightGreen;
+	
 }
 
+
 #blue{
-	background-color: $blue
+	background-color: $blue;
+	
+}
+
+/* #blue:active {
+	background-color: $brightBlue;
+} */
+
+#blue:active {
+	background-color: $brightBlue;
 }
 
 #purple{
-	background-color: $purple
+	background-color: $purple;
+}
+
+#purple:active {
+	background-color: $darkPurple;
 }
 
 #red {
-	background-color: $red
+	background-color: $red;
+	
 }
+
+#red:active {
+	background-color: $darkRed;
+}
+
+
 
 #orange{
-	background-color: $orange
+	background-color: $orange;
 }
 
+#orange:active {
+	background-color: $brightOrange;
+}
+
+
 #circle_first {
- border: 3.5px solid $green;
+ border: 10px solid $seethruGreen;
 }
 
 #circle_middle {
@@ -462,3 +507,314 @@ fieldset[disabled] .btn-orange.active {
   color: #FFAE36; 
   background-color: #FFFFFF; 
 }
+
+/* ----------------NAVBAR ICON STUFF------------*/
+
+.nav_icon {
+	margin-top:15px;
+}
+
+.nav_icon_account {
+	margin-top:5px;
+}
+
+.color_tabs {
+ 
+ line-height:0px;   
+		
+}
+
+
+/*########################################################
+-----------	Game FIRST -------------------
+	########################################################
+*/
+
+
+
+.btn-letter {
+    color: #333;
+    background-color: #FFF;
+    
+}
+
+.edu {
+h1 {font-size:2.5em;color: #d3cbfe;}
+h2 {font-size:2.8em;color:black;}
+}
+
+
+
+.edu_col {
+padding-left: 18px;
+}
+
+.btn-circle.btn-xl {
+  width: 60px;
+  height: 60px;
+  padding: 0px; /* there were padding values for the tablet here*/
+  font-weight:500;
+  font-size: 2.5em;
+  text-align:center;
+  border-radius: 50px;
+margin: 12px;
+}
+
+.btn-letter.active {
+background-color: #47fe92;
+border-width:4px;
+border-color: white;
+
+}
+
+.btn-circle.btn-xl.active {
+color: white;
+text-shadow: rgb(255, 255, 255) 0px 0px 8Spx;
+}
+
+/*.btn-default:hover {
+    color: #333;
+    background-color: #fff;
+    text-shadow: 0px 0px 3px rgba(255, 0, 0, 1);
+    
+    border-color: red;
+border-width: 1.7px
+} */
+
+.butt {
+
+}
+
+.disabled {
+	background-color: #fe212e;
+	border-width:4px;
+  border-color: white;
+	-webkit-box-shadow: 3px 3px 30px 0px rgba(255, 41, 110, 1);
+-moz-box-shadow:    3px 3px 30px 0px rgba(255, 41, 110, 1);
+box-shadow:         3px 3px 30px 0px rgba(255, 41, 110, 1);
+
+}
+
+.btn.disabled {
+	opacity: 1;
+} 
+
+.btn-circle.btn-xl.disabled {
+	color: white ;
+	text-shadow: rgb(255, 255, 255) 0px 0px 17px;
+}
+
+#star1 {
+	display: none;
+  padding-top: 10px;
+}
+
+#star2 {
+	display: none;
+  padding-top: 10px;
+}
+
+#star3 {
+	display: none;
+  padding-top: 10px;
+}
+
+.modal-sm {
+	width: 70%;
+	margin-left:15%;
+	
+}
+
+.modal-content {
+	background-color:rgba(255, 255, 255, 0.67);
+}
+
+#smiley {
+ 		margin-top: 10px;
+ 		margin-left: auto;
+    margin-right: auto;
+}
+
+#next {
+margin-top:10px;
+margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+/*########################################################
+-----------	RESPONSIVE DESIGN..HOLY GRAIL -------------------
+	########################################################
+*/
+
+@media (min-width: 768px) {
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+	
+	.carousel {
+  	margin-top: 50px;
+  	height: 500px;
+
+	}
+  .carousel .item {
+  	height: 500px;
+  }
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+  
+  .carousel-inner > .item > img {
+  	height:500px
+  }
+		
+  .featurette-heading {
+    font-size: 50px;
+  }
+
+	.bar {
+		height: 80px;
+	}
+	
+	 .navbar-fixed-top {
+    min-height: 120px;
+}
+
+
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 120px;
+}
+
+.navbar-nav > li > a.color_tabs {  /*--------def not theright way*/
+
+    padding-bottom: 0px;
+    line-height: 0px;
+		font-size: .8em;
+		color: $gray;
+		font-weight: 600;
+}
+
+
+
+.navbar-nav > li > a.color_tabs:hover {
+	color: $blue;
+		
+		
+}
+
+
+}
+
+
+
+
+
+@media (min-width: 1050px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+
+
+	
+}
+
+.menu{	
+	display:block;
+	width:80px;
+	height:80px;
+	border-radius:50px;
+	font-size:20px;
+	color:#fff;
+	line-height:100px;
+	text-align:center;
+	text-decoration:none;
+	background:#000
+	}
+.menu:hover{
+	color:#ccc;
+	text-decoration:none;
+	background:#333
+}
+
+/*--GOING BUCK WILD SEN--*/ 
+ 
+ .tint {
+    position: relative;
+    float: left;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    border-radius: 20%;
+    cursor: pointer;
+    -webkit-box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+    -moz-box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+    box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+  }
+  
+  .tint:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 20%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: none;
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+  }
+  
+  .tint:hover:before {
+    background: rgba(0,0,250, 0.5);
+    
+  }
+  
+  .tinty {
+  	position: relative;
+  }
+  
+  .tinty:before {
+  	content: "";
+    display: block;
+    position: absolute;
+    border-radius: 20%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: none;
+  }
+  
+  .tinty:hover:before {
+  	background: rgba(0,0,250, 0.5);
+  }
