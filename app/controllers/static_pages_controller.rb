@@ -13,5 +13,20 @@ class StaticPagesController < ApplicationController
 	
 	def printables
 	end
-
+	
+	def lessons
+	end
+	
+	def common_core
+	end
+	
+	def account
+	end
+	
+	
+	def lettertrace
+	end
+	
+	
+	
 end

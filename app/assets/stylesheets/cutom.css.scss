@@ -16,19 +16,23 @@ $gray: #42456E;
 
 $brightGreen: #13F022;
 $darkGreen:  #5ECC42;
+$liteGreen: rgba(118, 255, 82, 0.37);
 $seethruGreen: rgba(118, 255, 82, 0.35) ;
 
 $brightBlue: #1CBDE8;
 $darkBlue: #1CBDE8;
+$liteBlue: #B6E4E9;
 
-$brightPurple:#941AFF ;
+$brightPurple:#941AFF;
 $darkPurple:#5527DB;
+$litePurple:#DFD5FF;
 
 $brightRed:#EA2323;
 $darkRed:#D6223D;
+$liteRed:#E897A3;
 
-$brightOrange:#FF9D06 ;
-
+$brightOrange:#FF9D06;
+$liteOrange:#FFD595;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -88,8 +92,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
+  margin-top: 15px;
+	margin-bottom: 15px;
+
 }
 
 h2 {
@@ -239,7 +244,7 @@ input {
 
 .icon {
 	border-radius: 20%;
-	border: solid 5px $green;
+	border: solid 5px $liteGreen;
 	height: 100%;
 	width: 100%;
 	display:none;
@@ -255,21 +260,50 @@ input {
 
 
 
-.btn-gay:hover {
-	background-color: black;
-}
+
 
 #icon1 {
 		
+}
+#icon1:hover {
+ background-color: $liteGreen;
 }
 
 #icon2 {
 
 }
 
+#icon2:hover{
+	background-color: $liteBlue;
+}
+
+
 #icon3 {
 
 }
+
+#icon3:hover {
+	background-color: $litePurple;
+}
+
+#icon4 {
+
+}
+
+#icon4:hover {
+			background-color: $liteRed;
+}
+
+#icon5 {
+
+}
+
+#icon5:hover {
+		background-color: $liteOrange;
+}
+
+
+
 
 .icon_font {
 	display: none;
@@ -284,15 +318,22 @@ input {
 
 
 
-.tab_backgroundz {
+.tab_backgroundz { /*-----THIS IS THE COLOR'D NAV ICON UP TOP----*/
 	border-radius: 60%;
 	width: 80px;
 	height: 80px;
-  margin-left: 10px;
+  margin-left: 20px;
+	margin-right: 0px;
 	margin-top: 10px;
 	cursor: pointer;
-	
+
 }
+
+.listuff {
+	width: 150px;
+}
+
+
 
 
 #green {
@@ -508,7 +549,10 @@ fieldset[disabled] .btn-orange.active {
   background-color: #FFFFFF; 
 }
 
-/* ----------------NAVBAR ICON STUFF------------*/
+/*########################################################
+-----------	NAVBAR ICON STUFF -------------------
+	########################################################
+*/
 
 .nav_icon {
 	margin-top:15px;
@@ -519,10 +563,50 @@ fieldset[disabled] .btn-orange.active {
 }
 
 .color_tabs {
- 
+ margin-left:0px;
+ margin-right:0px;
  line-height:0px;   
 		
 }
+
+
+/*########################################################
+-----------	PAGE HEADING STUFF -------------------
+	########################################################
+*/
+	
+	.heading_icon {
+		padding-top: 0px;
+	}
+  
+  .heading {
+ 	
+ 	color: white;
+ 	height: 110px;
+  text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+  
+  
+ }
+ 
+ .green {
+ 	background-color: $green;
+ }
+ 
+ .blue {
+ 	background-color: $blue;
+ }
+ 
+ .purple {
+ 	background-color: $purple;
+ }
+ 
+ .red {
+ 	background-color: $red;
+ }
+ 
+ .orange {
+ 	background-color: $orange;
+ }	
 
 
 /*########################################################
@@ -674,7 +758,7 @@ margin-bottom: 20px;
   }
 	
 	.carousel {
-  	margin-top: 50px;
+
   	height: 500px;
 
 	}
@@ -729,6 +813,15 @@ margin-bottom: 20px;
 		
 }
 
+.heading_font {
+	line-height: 80px;
+	
+}
+
+
+body {
+	padding-top: 120px;
+}
 
 }
 
@@ -765,39 +858,7 @@ margin-bottom: 20px;
 
 /*--GOING BUCK WILD SEN--*/ 
  
- .tint {
-    position: relative;
-    float: left;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    border-radius: 20%;
-    cursor: pointer;
-    -webkit-box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
-    -moz-box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
-    box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
-  }
-  
-  .tint:before {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 20%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: none;
-    -moz-transition: all .2s linear;
-    -webkit-transition: all .2s linear;
-    -ms-transition: all .2s linear;
-    -o-transition: all .2s linear;
-    transition: all .2s linear;
-  }
-  
-  .tint:hover:before {
-    background: rgba(0,0,250, 0.5);
-    
-  }
+
   
   .tinty {
   	position: relative;
@@ -815,6 +876,16 @@ margin-bottom: 20px;
     background: none;
   }
   
+  
+  
   .tinty:hover:before {
-  	background: rgba(0,0,250, 0.5);
+  	background: rgba(0,0,0, 0.4);
   }
+  
+  .tinty:active:before {
+  	background: rgba(0,0,0, 0.8);
+  }
+  
+
+ 
+ 

@@ -10,7 +10,13 @@ match '/games',   	 to: 'static_pages#games',    	via: 'get'
 match '/about',   	 to: 'static_pages#about',    	via: 'get'
 match '/contact',    to: 'static_pages#contact',    via: 'get'
 match '/printables', to: 'static_pages#printables', via: 'get' 
-  # The priority is based upon order of creation: first created -> highest priority.
+match '/lessons', 	 to: 'static_pages#lessons', via: 'get'
+match '/common_core', to: 'static_pages#common_core', via: 'get'
+match '/account', to: 'static_pages#account', via: 'get'
+match '/lettertrace', to: 'static_pages#lettertrace', via: 'get'  
+ 
+ 
+ # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

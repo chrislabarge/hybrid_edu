@@ -58,13 +58,52 @@ describe "Static pages" do
 	end
 	
 	describe 'Printables page' do
-		before {visit printables_path}
+		before {visit printables_path }
 		
 		let(:heading) 	 {'Printable Material'}
 		let(:page_title) {'Printable Material'}
 		
 		it_should_behave_like "all static pages"
 	end
+	
+	describe 'Lessons page' do
+		before {visit lessons_path }
+		
+		let(:heading) 	 {'Creative Lessons'}
+		let(:page_title) {'Creative Lessons'}
+		
+		it_should_behave_like "all static pages"
+	end
+	
+	describe 'Common Core page' do
+		before {visit common_core_path }
+		
+		let(:heading) 	 {'Common Core Resources'}
+		let(:page_title) {'Common Core'}
+		
+		it_should_behave_like "all static pages"
+	end
+	
+	describe 'Account page' do
+		before {visit account_path }
+		
+		let(:heading) 	 {'My Account'}
+		let(:page_title) {'My Account'}
+		
+		it_should_behave_like "all static pages"
+	end
+	
+	
+	
+	describe 'Printable document pages' do
+		before {visit lettertrace_path }
+		
+		let(:heading) 		{'Letter Tracing Worksheets'}
+		let(:page_title)	{'Printable Worksheets'}
+		
+		it_should_behave_like "all static pages"
+	end
+
 	
 	it "should have the right links on the layout" do
 		visit root_path

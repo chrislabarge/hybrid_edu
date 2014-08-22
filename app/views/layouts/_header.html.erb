@@ -35,16 +35,35 @@
           </ul>
         	 <ul class="nav navbar-nav navbar-right center right_pad">
     				
-    				<li> <a href="/printables" class="color_tabs"> <div class='tab_backgroundz' id='green'><%=image_tag('printables.png', height: '60%', width:'60%', class:'nav_icon')%></div><p class='center'>Printable Materials</p></a></li>
-    			 <li> <a href="/games" class="color_tabs"> <div class='tab_backgroundz' id='blue' ><%=image_tag('games.png', height: '60%', width:'60%', class:'nav_icon')%></div><p>Learning Games</p></a></li>
-    				<li> <a href='#' class='color_tabs'> <div class='tab_backgroundz' id='purple'><%=image_tag('idea.png', height: '64%', width:'64%', class:'nav_icon')%></div><p>Creative Lessons</p></a></li>
-    				<li> <a href='#' class='color_tabs'> <div class='tab_backgroundz' id='red'><%=image_tag('apple.png', height: '60%', width:'60%', class:'nav_icon')%></div><p>Common Core</p></a></li>
-    				<li> <a href='#' class='color_tabs'> <div class='tab_backgroundz' id='orange'><%=image_tag('user.png', height: '60%', width:'60%', class:'nav_icon')%></div><p>My Account</p></a></li>
+    				<li class="listuff"	id='icon1'> <a href="/printables" class="color_tabs"> <div class='tab_backgroundz' id='green'><%=image_tag('printables.png', height: '60%', width:'60%', class:'nav_icon center')%></div><p class='center'>Printable Materials</p></a></li>
+    			 	<li class="listuff" id='icon2'> <a href="/games" class="color_tabs"> <div class='tab_backgroundz' id='blue' ><%=image_tag('games.png', height: '60%', width:'60%', class:'nav_icon')%></div><p>Learning Games</p></a></li>
+    				<li class="listuff"	id='icon3'> <a href='/lessons' class='color_tabs'> <div class='tab_backgroundz' id='purple'><%=image_tag('idea.png', height: '64%', width:'64%', class:'nav_icon')%></div><p>Creative Lessons</p></a></li>
+    				<li class="listuff" id='icon4'> <a href='/common_core' class='color_tabs'> <div class='tab_backgroundz' id='red'><%=image_tag('apple.png', height: '60%', width:'60%', class:'nav_icon')%></div><p>Common Core</p></a></li>
+    				<li class="listuff" id='icon5'> <a href='/account' class='color_tabs'> <div class='tab_backgroundz' id='orange'><%=image_tag('user.png', height: '60%', width:'60%', class:'nav_icon')%></div><p>My Account</p></a></li>
     			</ul>
         
         </div><!-- /.navbar-collapse -->
      
       </div>
 			
-    </nav>
+</nav>
+
+<%if heading_select('current_page')%>    
+	
+	
+	<div class='row heading <%=heading_select('class')%>'>
+	
+		<div class='col-xs-5'>
+		
+		
+		<%=image_tag(heading_select('image'), height: '80px', width:'80px', class:'nav_icon pull-right')%> 
+		
+	
+	</div>
+	<div class='col-xs-7' style='height:110px'>	
+		<h1 class='heading_font'><%= heading_select('heading')%></h1>
+	</div>
+</div>
+
+<%end%> 
     
