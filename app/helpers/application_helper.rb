@@ -11,101 +11,56 @@ module ApplicationHelper
 	end
 
 	def heading_select(section)
-		
-		if current_page?('/printables')
-			if section =='current_page'
-			  return true
-			end
-			
-			if section =='class'
-				return "green"
-			end
-			
-			if section =='image'
-				return 'printables.png'
-			end		
-			
-			if section == 'heading'
-				return "Printable Material"
-			end
-		end
-	
-	
-		if current_page?('/games')
-			if section =='current_page'
-			  return true
-			end
-			
-			if section =='class'
-				return "blue"
-			end
-			
-			if section =='image'
-				return 'games.png'
-			end		
-			
-			if section == 'heading'
-				return "Learning Games"
-			end
-		end
-		
-		if current_page?('/lessons')
-			if section =='current_page'
-			  return true
-			end
-			
-			if section =='class'
-				return "purple"
-			end
-			
-			if section =='image'
-				return 'idea.png'
-			end		
-			
-			if section == 'heading'
-				return "Creative Lessons"
-			end
-		end
-	
-		if current_page?('/common_core')
-			if section =='current_page'
-			  return true
-			end
-			
-			if section =='class'
-				return "red"
-			end
-			
-			if section =='image'
-				return 'apple.png'
-			end		
-			
-			if section == 'heading'
-				return "Common Core Resources"
-			end
-		end
-	
-		if current_page?('/account')
-			if section =='current_page'
-			  return true
-			end
-			
-			if section =='class'
-				return "orange"
-			end
-			
-			if section =='image'
-				return 'user.png'
-			end		
-			
-			if section == 'heading'
-				return "My Account"
-			end
-		end
-	
-		
-	
-	end
+
+green = ["green","printables.png","Printable Material"]
+blue  = ["blue", "games.png", "Learning Games"]
+purple = ["purple", "idea.png", "Creative Lessons"]
+red = ["red", "apple.png", "Common Core Resources"]
+orange = ["orange", 'user.png', 'My Account']
+
+switch = false
+
+if current_page?('/printables')
+	array = green
+	switch = true
+elsif current_page?('/games')
+	array = blue
+	switch = true
+elsif current_page?('/lessons')
+	array = purple
+	switch = true
+elsif current_page?('/common_core')
+	array = red
+	switch = true
+elsif current_page?('/account')
+	array = orange
+	switch = true
+else
+	nil
+end
+
+if switch == false
+	return false
+elsif section == 'current_page' 
+	return true
+	else
+		nil
+end
+
+if section == 'class'
+	return array[0]
+end
+
+if section == 'image'
+	return array[1]
+end
+
+if section == 'heading'
+	return array[2]
+end
+
+
+end
 	
 	
 	

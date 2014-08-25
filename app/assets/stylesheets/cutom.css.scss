@@ -260,8 +260,9 @@ input {
 
 
 
+/*--------------------------------------------------------------------*/
 
-
+/*---THIS IS ALL OF THE LIGHT HOVER COLOR STUFF BENEATH THE ICONS---*/
 #icon1 {
 		
 }
@@ -302,8 +303,8 @@ input {
 		background-color: $liteOrange;
 }
 
-
-
+/*--------------------------------------------------------------------*/
+/*------------------------NAV ICON STUFF------------------------------*/
 
 .icon_font {
 	display: none;
@@ -311,26 +312,49 @@ input {
 
 
 
-.right_pad {
+.right_pad {  /*-------THIS IS FOR THE LAST BUTTON*/
 	padding-right: 20px;
 }
 
 
 
 
-.tab_backgroundz { /*-----THIS IS THE COLOR'D NAV ICON UP TOP----*/
+.tab_backgroundz { /*-----Nav Icons in-between 768-1280px----*/
 	border-radius: 60%;
-	width: 80px;
-	height: 80px;
-  margin-left: 20px;
+	width: 55px;
+	height: 55px;
+  margin-left: 2px;
 	margin-right: 0px;
-	margin-top: 10px;
+	margin-top: -10px;
 	cursor: pointer;
+	
+}
+
+
+.p_tag{
+	line-height:	1.0em;
+
 
 }
 
+
+.navbar-nav > li > a.color_tabs {  /*--------def not theright way*/
+
+    margin-bottom: -5px;
+    padding-bottom: 0px;
+  	font-size: .8em;
+		color: $gray;
+		font-weight: 470;
+}
+
+
+
+
+
+
+
 .listuff {
-	width: 150px;
+	width: 90px;
 }
 
 
@@ -555,7 +579,7 @@ fieldset[disabled] .btn-orange.active {
 */
 
 .nav_icon {
-	margin-top:15px;
+	margin-top:10px;
 }
 
 .nav_icon_account {
@@ -737,7 +761,7 @@ margin-bottom: 20px;
 	########################################################
 */
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 
   /* Navbar positioning foo */
   .navbar-wrapper {
@@ -787,7 +811,9 @@ margin-bottom: 20px;
 	
 	 .navbar-fixed-top {
     min-height: 120px;
-}
+		}
+
+
 
 
 .navbar-nav > li > a {
@@ -807,11 +833,30 @@ margin-bottom: 20px;
 
 
 
-.navbar-nav > li > a.color_tabs:hover {
-	color: $blue;
-		
-		
+
+.tab_backgroundz { /*-----THIS IS THE COLOR'D NAV ICON UP TOP----*/
+	border-radius: 60%;
+	width: 80px;
+	height: 80px;
+  margin-left: 20px;
+	margin-right: 0px;
+	margin-top: 10px;
+	cursor: pointer;
+
 }
+
+
+.nav_icon {
+	margin-top:15px;
+}
+
+
+.listuff {     /*--This is the width of the icon section--*/
+	width: 142px;
+}
+
+
+
 
 .heading_font {
 	line-height: 80px;
@@ -838,6 +883,7 @@ body {
 	
 }
 
+/*--------------DON'T KNOW WHAT THIS DOES...--------- 
 .menu{	
 	display:block;
 	width:80px;
@@ -855,6 +901,7 @@ body {
 	text-decoration:none;
 	background:#333
 }
+*/
 
 /*--GOING BUCK WILD SEN--*/ 
  

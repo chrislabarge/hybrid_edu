@@ -3,3 +3,41 @@
 <h1>Letter Tracing Worksheets</h1>
 
 <a href="https://drive.google.com/file/d/0B8TeTx1CN-rpMWdoaVBUXzJ6blE/edit?usp=sharing">Worksheet TEST</a> 
+
+<div class="row">
+<!--	<%= form_tag() do %>
+	<div class="col-lg-4">
+			<%= select_tag(:city_id, options_for_select([['Upper and Lower Case a-Z', 1],['Upper Case A-Z', 2],['Lower Case a-z', 3 ]]
+			), { :class => 'form-control input-lg"' } ) %>
+			
+		
+	</div>
+	<div class="col-lg-2">
+		<button type="submit" class="btn btn-primary">View</button>
+		<button type="submit" class="btn btn-default">Print</button>
+
+	</div>
+<%end%>
+<div> -->
+
+<select class="form-control input-lg" id="dynamic_select">
+    <option value="" selected>Pick a Website</option>
+    <option value="https://drive.google.com/file/d/0B8TeTx1CN-rpczVYTGVvSVhNNWs/edit?usp=sharing">Upper and Lower Case a-Z</option>
+    <option value="https://drive.google.com/file/d/0B8TeTx1CN-rpd2JWS3ViU292QkE/edit?usp=sharing">Upper Case A-Z</option>
+    <option value="https://drive.google.com/file/d/0B8TeTx1CN-rpRFV4ZHZiWnU5NEE/edit?usp=sharing">Lower Case a-z</option>
+</select>
+
+<script>
+    $(function(){
+      // bind change event to select
+      $('#dynamic_select').bind('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+</script>
+
+
