@@ -49,23 +49,23 @@ $liteOrange:#FFD595;
 
 
 #liteGreen {
-	background-color:$liteGreen ;
+	background-color:$green ;
 }
 
 #liteBlue {
-	background-color:$liteBlue ;
+	background-color:$blue ;
 }
 
 #litePurple {
-	background-color:$litePurple ;
+	background-color:$purple ;
 }
 
 #liteRed {
-	background-color:$liteRed ;
+	background-color:$red ;
 }
 
 #liteOrange {
-	background-color:$liteOrange ;
+	background-color:$orange ;
 }
 
 
@@ -764,29 +764,44 @@ margin-bottom: 20px;
 	########################################################
 */
 
-/*------max width-----*/
+/*------max width XS DEVICES-----*/
 
 
 @media (max-width: 768px) {
 	
-	#liteGreen:hover {
-	background-color: black;
+p.p_tag {
+		color: white;
+		font-size: 2em;
+		font-weight: 500;
+	}
+
+p.lead {
+	font-size: 1.2em;
+}	
+
+.navbar-collapse {
+	background-color: #424242;
+}		
+	
+	
+	#liteGreen:active {
+	background-color: $green;
 }
 
-#liteBlue:hover {
-	background-color:black ;
+#liteBlue:active {
+	background-color: $blue;
 }
 
-#litePurple:hover {
-	background-color:black ;
+#litePurple:active {
+	background-color: $purple;
 }
 
-#liteRed:hover {
-	background-color:black ;
+#liteRed:active {
+	background-color:$red;
 }
 
-#liteOrange:hover {
-	background-color:black ;
+#liteOrange:active {
+	background-color:$orange;
 }
 
 	
@@ -827,6 +842,7 @@ margin-bottom: 20px;
 
 
 @media (min-width: 768px) {
+	
 	
 	
 	#icon1:hover {
