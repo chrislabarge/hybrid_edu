@@ -287,42 +287,24 @@ input {
 #icon1 {
 		
 }
-#icon1:hover {
- background-color: $liteGreen;
-}
+
 
 #icon2 {
 
 }
 
-#icon2:hover{
-	background-color: $liteBlue;
-}
-
-
 #icon3 {
 
-}
-
-#icon3:hover {
-	background-color: $litePurple;
 }
 
 #icon4 {
 
 }
 
-#icon4:hover {
-			background-color: $liteRed;
-}
-
 #icon5 {
 
 }
 
-#icon5:hover {
-		background-color: $liteOrange;
-}
 
 /*--------------------------------------------------------------------*/
 /*------------------------NAV ICON STUFF------------------------------*/
@@ -787,6 +769,27 @@ margin-bottom: 20px;
 
 @media (max-width: 768px) {
 	
+	#liteGreen:hover {
+	background-color: black;
+}
+
+#liteBlue:hover {
+	background-color:black ;
+}
+
+#litePurple:hover {
+	background-color:black ;
+}
+
+#liteRed:hover {
+	background-color:black ;
+}
+
+#liteOrange:hover {
+	background-color:black ;
+}
+
+	
 	.li_icon {
 	width: 100%;
 	height: 120px;
@@ -806,8 +809,11 @@ margin-bottom: 20px;
 		height: 100px;
 		width: 80%;
 		border-radius: 20px;
-		background-color: $liteGreen;
+	&:hover{
+		
+	}	
 	}
+
 
 }
 
@@ -821,16 +827,66 @@ margin-bottom: 20px;
 
 
 @media (min-width: 768px) {
+	
+	
+	#icon1:hover {
+	 background-color: $liteGreen;
+	}
+
+	#icon2:hover{
+		background-color: $liteBlue;
+	}
+
+	#icon3:hover {
+		background-color: $litePurple;
+	}
+
+	#icon4:hover {
+		background-color: $liteRed;
+	}
+
+	#icon5:hover {
+		background-color: $liteOrange;
+	}
+
+	
+	
+	
+	
+	body {
+		padding-top: 90px;
+	}
+	
 	.navbar-nav > li > a {
     line-height: 60px;
 		}
 	
 
 	.navbar-nav > li > a.color_tabs {  /*--------def not theright way*/
+		 line-height: 0px;
+		}
+		
+	#liteGreen {
+		background-color:rgba(0, 0, 0, 0) ;
+	}
 
-  
-		line-height: 0px;
-}
+
+	#liteBlue {
+		background-color:rgba(0, 0, 0, 0) ;
+	}
+
+	#litePurple {
+		background-color:rgba(0, 0, 0, 0) ;
+	}
+
+	#liteRed {
+		background-color:rgba(0, 0, 0, 0) ;
+	}
+
+	#liteOrange {
+		background-color:rgba(0, 0, 0, 0) ;
+	}	
+
 
 }
 
