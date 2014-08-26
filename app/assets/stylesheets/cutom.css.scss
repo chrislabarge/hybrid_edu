@@ -367,7 +367,7 @@ input {
 	background-color: $green;
 
 }
-#green:active {
+#green:hover, #green:focus {
 	
 	background-color: $brightGreen;
 	
@@ -379,11 +379,8 @@ input {
 	
 }
 
-/* #blue:active {
-	background-color: $brightBlue;
-} */
 
-#blue:active {
+#blue:hover, #blue:focus {
 	background-color: $brightBlue;
 }
 
@@ -391,7 +388,7 @@ input {
 	background-color: $purple;
 }
 
-#purple:active {
+#purple:hover, #purple:focus {
 	background-color: $darkPurple;
 }
 
@@ -400,7 +397,7 @@ input {
 	
 }
 
-#red:active {
+#red:hover, #red:focus {
 	background-color: $darkRed;
 }
 
@@ -410,7 +407,7 @@ input {
 	background-color: $orange;
 }
 
-#orange:active {
+#orange:hover, #orange:focus {
 	background-color: $brightOrange;
 }
 
@@ -785,27 +782,27 @@ p.lead {
 	
 	
 	#liteGreen:hover, #liteGreen:focus {
-	background-color: black;
+	background-color: $brightGreen;
 }
 
-#liteBlue:active {
-	background-color: $blue;
+#liteBlue:hover, #liteBlue:focus {
+	background-color: $darkBlue;
 }
 
-#litePurple:active {
-	background-color: $purple;
+#litePurple:hover, #litePurple:focus {
+	background-color: $darkPurple;
 }
 
-#liteRed:active {
-	background-color:$red;
+#liteRed:hover, #liteRed:focus {
+	background-color:$darkRed;
 }
 
-#liteOrange:active {
-	background-color:$orange;
+#liteOrange:hover, #liteOrange:focus {
+	background-color:$brightOrange;
 }
 
 	
-	.li_icon {
+	.li_icon,  {
 	width: 100%;
 	height: 120px;
 	padding-bottom: 20px;	
