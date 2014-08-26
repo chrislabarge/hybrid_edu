@@ -784,8 +784,8 @@ p.lead {
 }		
 	
 	
-	#liteGreen:active {
-	background-color: $green;
+	#liteGreen:hover, #liteGreen:focus {
+	background-color: black;
 }
 
 #liteBlue:active {
