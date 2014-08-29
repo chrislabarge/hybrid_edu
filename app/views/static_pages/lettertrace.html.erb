@@ -1,31 +1,102 @@
 <% provide(:title, 'Printable Worksheets')%>
 
-<h1>Letter Tracing Worksheets</h1>
-
-<a href="https://drive.google.com/file/d/0B8TeTx1CN-rpMWdoaVBUXzJ6blE/edit?usp=sharing">Worksheet TEST</a> 
-
-<div class="row">
-<!--	<%= form_tag() do %>
-	<div class="col-lg-4">
-			<%= select_tag(:city_id, options_for_select([['Upper and Lower Case a-Z', 1],['Upper Case A-Z', 2],['Lower Case a-z', 3 ]]
-			), { :class => 'form-control input-lg"' } ) %>
-			
+<div class=row>
+	<!--<div class="col-xs-12 col-sm-7 sheets_div center">
+		<%=image_tag('test_sheets.jpg', class:" blog_photo")%>
+	</div> -->
+	
+	<div class="col-xs-12 col-sm-7">
+		<div class="sheets_div center">
+			<%=image_tag('test_sheets.jpg', class:" blog_photo")%>
+		</div>			
 		
+		<div>
+			<h1 style="padding-top:30px;">Letter Search Worksheets</h1>
+			<p class="lead"> These are the perfect way to get the little ones recognizing specific letters.
+				The font is made to look hand written to allow for an easy transition to print letters.
+			</p>
+			
+			<ul class="lead">
+				<li>Capital Letters A-Z</li>
+				<li>Lower Case Letters a-z</li>
+				<li>Capital & Lowers Case Letters A-z</li>
+			</ul>
+		</div>
 	</div>
-	<div class="col-lg-2">
-		<button type="submit" class="btn btn-primary">View</button>
-		<button type="submit" class="btn btn-default">Print</button>
+	
+	<div class="col-xs-12 col-sm-5">
+		<div class="worksheet_div center">
+			<%=image_tag("heyitsa.jpg", class:"worksheet")%>
+		</div>
+		
 
+		
+		<div class="row" style="padding-top: 20px;"> <!--this is the goddamn padding for PRINT OR DOWNLOAD-->	
+			
+			<div class="col-xs-6">	
+				<h2 class="print_download">Print or Download</h2>
+			</div>		
+			
+			<div class="col-xs-6 col-sm-6">
+				<%=image_tag('arrow.png', height:'50%', width:'50%' ,class:'pull-left') %>
+			</div>
+			
+			<div class="col-xs-12">	
+				<select class="form-control input-lg select_form" id="dynamic_select">
+   	  		<option value="" selected>Select which set of Printables</option>
+    			<option value="https://drive.google.com/file/d/0B8TeTx1CN-rpczVYTGVvSVhNNWs/edit?usp=sharing">Upper and Lower Case a-Z</option>
+    			<option value="https://drive.google.com/file/d/0B8TeTx1CN-rpd2JWS3ViU292QkE/edit?usp=sharing">Upper Case A-Z</option>
+    			<option value="https://drive.google.com/file/d/0B8TeTx1CN-rpRFV4ZHZiWnU5NEE/edit?usp=sharing">Lower Case a-z</option>
+				</select>	
+			
+				<h3 class="center">All sets are<%=image_tag('http://onespiritinterfaith.org/cms/wp-content/uploads/2012/05/pdf-icon-transparent-background2.png', class:"pdf_icon center")%> format</h3>
+			</div>	
+		
+		</div>   	
+		
+		
+	
+	
 	</div>
-<%end%>
-<div> -->
+	
+</div>
 
-<select class="form-control input-lg" id="dynamic_select">
-    <option value="" selected>Pick a Website</option>
-    <option value="https://drive.google.com/file/d/0B8TeTx1CN-rpczVYTGVvSVhNNWs/edit?usp=sharing">Upper and Lower Case a-Z</option>
-    <option value="https://drive.google.com/file/d/0B8TeTx1CN-rpd2JWS3ViU292QkE/edit?usp=sharing">Upper Case A-Z</option>
-    <option value="https://drive.google.com/file/d/0B8TeTx1CN-rpRFV4ZHZiWnU5NEE/edit?usp=sharing">Lower Case a-z</option>
-</select>
+
+
+<!-- <div class="row"> 
+	
+	<div class="col-sm-5">
+		<div class="row">	
+			<div class="col-xs-6">	
+				<h2 class="print_download">Print  <sp>or Download</h2>
+			</div>		
+			<div class="col-xs-5">
+				<%=image_tag('arrow.png', height:'50%', width:'50%' ,class:'pull-left') %>
+			</div>
+		</div>   	
+			<select class="form-control input-lg select_form" id="dynamic_select">
+   	  	<option value="" selected>Select which set of Printables</option>
+    		<option value="https://drive.google.com/file/d/0B8TeTx1CN-rpczVYTGVvSVhNNWs/edit?usp=sharing">Upper and Lower Case a-Z</option>
+    		<option value="https://drive.google.com/file/d/0B8TeTx1CN-rpd2JWS3ViU292QkE/edit?usp=sharing">Upper Case A-Z</option>
+    		<option value="https://drive.google.com/file/d/0B8TeTx1CN-rpRFV4ZHZiWnU5NEE/edit?usp=sharing">Lower Case a-z</option>
+		</select>
+	</div> 
+
+
+</div>
+
+<!--<div class="row">
+
+	<div class="col-xs-10">
+
+		<select class="form-control input-lg" id="dynamic_select">
+   	  <option value="" selected>Pick a set of Printables</option>
+    	<option value="https://drive.google.com/file/d/0B8TeTx1CN-rpczVYTGVvSVhNNWs/edit?usp=sharing">Upper and Lower Case a-Z</option>
+    	<option value="https://drive.google.com/file/d/0B8TeTx1CN-rpd2JWS3ViU292QkE/edit?usp=sharing">Upper Case A-Z</option>
+    	<option value="https://drive.google.com/file/d/0B8TeTx1CN-rpRFV4ZHZiWnU5NEE/edit?usp=sharing">Lower Case a-z</option>
+		</select>
+	</div>
+</div> -->
 
 <script>
     $(function(){
@@ -41,3 +112,16 @@
 </script>
 
 
+<!--	<%= form_tag() do %>
+	<div class="col-lg-4">
+			<%= select_tag(:city_id, options_for_select([['Upper and Lower Case a-Z', 1],['Upper Case A-Z', 2],['Lower Case a-z', 3 ]]
+			), { :class => 'form-control input-lg"' } ) %>
+			
+		
+	</div>
+	<div class="col-lg-2">
+		<button type="submit" class="btn btn-primary">View</button>
+		<button type="submit" class="btn btn-default">Print</button>
+
+	</div>
+<%end%> -->

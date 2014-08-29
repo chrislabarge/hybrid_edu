@@ -40,6 +40,9 @@ $liteOrange:#FFD595;
   box-sizing: border-box;
 }
 
+
+
+
 @mixin test_font {
 	
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -95,6 +98,16 @@ textarea {
   text-align: center;
 }
 
+.vertical-align{
+    position:relative; /* or absolute */
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
 .center h1 {
   margin-bottom: 10px;
 }
@@ -122,7 +135,6 @@ h2 {
   font-size: 1.9em;
   letter-spacing: -1px;
   margin-bottom: 20px;
-  text-align: center;
   font-weight: normal;
   color: #999;
 }
@@ -634,6 +646,74 @@ fieldset[disabled] .btn-orange.active {
 
 
 /*########################################################
+-----------	Blog Style Pages -------------------
+	########################################################
+*/
+
+
+.sheets_div {
+	background-color: $green;
+	margin-top: 50px;
+	border-radius: 30px;
+  padding: 32px 0px 32px 0;
+ 
+}
+
+.blog-content {
+
+
+}		
+
+.blog_photo {
+ height: 90%;
+ width: 90%;
+ border: solid;
+ border-width: 10px;
+ border-color: white;
+ border-radius: 30px;
+}
+
+.worksheet_div {
+	border-radius: 30px;
+	background-color: $green;
+	padding: 0px 20px 0px 20px;
+	margin-top: 50px;	
+
+}
+
+.worksheet {
+	
+	width: 90%;	
+	height: 90%;
+	border: solid;
+  border-width: 1px;
+  border-color: black;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	
+	 /* padding: 38px 30px 38px 30px; HAD TO BE 10px BIGGER BECAUSE ON AN ILLUSION WITH BORDER*/
+}
+
+.blog_summary {
+	/*margin-top: -70px;*/
+}
+
+.pdf_icon {
+	width:  15%;
+	height: 15%;
+}
+
+.select_form {
+  margin-top: 20px;
+}
+
+
+.print_download {
+ 	font-size:2.8em;
+	
+}
+
+/*########################################################
 -----------	Game FIRST -------------------
 	########################################################
 */
@@ -840,6 +920,11 @@ p.lead {
 
 @media (min-width: 768px) {
 	
+	
+	.print_download {
+ 	font-size:3.5em;
+	
+}
 	
 	
 	#icon1:hover {
