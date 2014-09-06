@@ -1,0 +1,84 @@
+	<script>
+			$(document).ready(function(){
+  		
+  		  var currentButton = 0
+  		  
+  		  $(".butt").click(function(){
+        	$(this).button('loading').delay(1000).queue(function() {
+            $(this).button('reset');
+            $(this).dequeue();
+        	});        
+    		});
+  		  
+  		 
+  	$(".correct").click(function(){
+   		 
+   		 currentButton = currentButton + 1
+   		 
+   		 if (currentButton == 1) { 
+   		  	
+   		  	$("#star1").velocity("transition.bounceRightIn",700 );
+  				$("#star1").velocity("callout.shake",600);
+  		   
+  		    if (<%=@level%> == 1) { 
+  		  		setTimeout(function() {
+						$('#smileModal').modal('show')
+  					$("#smiley").velocity("callout.bounce",1450)
+  					}, 1350);	
+  		  		
+  		    }
+  		  
+  		  }
+  			
+		  if (currentButton == 2) {
+		  	
+		  		$("#star2").velocity("transition.bounceRightIn",700 );
+  				$("#star2").velocity("callout.shake",600);
+		  	
+		  	
+		  	  if (<%=@level%> == 2) { 
+  		  		setTimeout(function() {
+						$('#smileModal').modal('show')
+  					$("#smiley").velocity("callout.bounce",1450)
+  					}, 1350);	
+  		  
+  		    }
+		  	
+		  	
+		  	}		
+  				
+  		
+  		if (currentButton == 3) {
+		  	
+		  		$("#star3").velocity("transition.bounceRightIn",700 );
+  				$("#star3").velocity("callout.shake",600);
+		  	
+		  	  if (<%=@level%> == 3) { 
+  		  		setTimeout(function() {
+						$('#smileModal').modal('show')
+  					$("#smiley").velocity("callout.bounce",1450)
+  					}, 1350);	
+  		    	
+     		
+     				
+  		    }
+		  	
+		  	
+		  	}		
+  		});			
+  	
+     $("#next").click(function(){
+	  	$("#smiley").velocity("callout.bounce",800);
+	    
+	  setTimeout(function() {
+	    window.location.replace("/<%=level%>");
+			}, 500);
+	  
+	  });
+    
+   
+   
+   
+
+});
+		</script>

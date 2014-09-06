@@ -12,16 +12,72 @@ module StaticPagesHelper
 
 #to pick a new letter for the button array, excluding the letter variable
 	
-	def new_letter(start_letter)
+	def new_letter(search_letter)
 	 	letter= alphabet
 	 	
-	 	while letter == start_letter do
+	 	while letter == search_letter do
 	 		letter= alphabet
 	 	end
 	 	
 	 	return letter
 	end
-	 	
+
+#this is for making the buttons array	 	
+
+ def gay_array(number_of_buttons, search_letter, search_buttons) 
+ 	array = [ ] 
+	
+	while array.length <= number_of_buttons - (1 + search_buttons) do
+ 		array.push(new_letter(search_letter))
+ 	end
+ 	
+  3.times do array.push(search_letter)
+	end		
+ 		
+ 	return array.shuffle
+ 
+ end
+
+#THIS IS a function for the new game
+
+	def letter_maze(button_array,search_letter,dog,house)
+			
+			button_array.delete_at(dog)
+			button_array.insert(dog, search_letter)
+			
+			button_array.delete_at((dog + 6))
+			button_array.insert((dog + 6), search_letter)
+			
+			button_array.delete_at((dog + 12))
+			button_array.insert((dog + 12), search_letter)
+			
+			button_array.delete_at((house - 6))
+			button_array.insert((house - 6), search_letter)
+			
+			button_array.delete_at((house - 12))
+			button_array.insert((house - 12), search_letter)
+
+			button_array.delete_at(house)
+			button_array.insert(house, search_letter)
+			
+			if (dog + 12) < (house - 12)
+				range = (dog + 12)...(house - 12)
+			else
+				range = (house - 12)...(dog + 12)
+			end
+			
+			for x in range do
+				button_array.delete_at(x)
+				button_array.insert( x, search_letter)
+				
+			
+			end
+			
+			return button_array			
+							
+	end
+
+
 ################################################################
   #this is to determine id for the star animation
   
@@ -44,9 +100,9 @@ def level
 	
 	
 	if @level == 1 
-		return 'help'
+		return 'game_letter_search_2'
 	elsif @level == 2 #this tells me that this is the first button, then sets the variable as such
-		return 'about' 	
+		return 'game_letter_search_3' 	
 	else 
 		nil
   end

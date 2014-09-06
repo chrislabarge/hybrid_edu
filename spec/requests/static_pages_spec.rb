@@ -98,12 +98,54 @@ describe "Static pages" do
 	describe 'Printable document pages' do
 		before {visit lettertrace_path }
 		
-		let(:heading) 		{'Letter Tracing Worksheets'}
+		let(:heading) 		{'Letter Search Worksheets'}
 		let(:page_title)	{'Printable Worksheets'}
 		
 		it_should_behave_like "all static pages"
 	end
+	
 
+
+
+
+
+	describe 'First page of the Letter Search Game' do
+		before {visit game_letter_search_path}
+		
+		let(:heading) {' '}
+		let(:page_title)	{'Letter Search Game'}
+		
+		it_should_behave_like "all static pages"
+	end
+
+	describe 'Second Page of the Letter Search Game' do
+		before {visit game_letter_search_2_path}
+		
+		let(:heading) {' '}
+		let(:page_title) {'Letter Search Game'}
+		
+		it_should_behave_like "all static pages"
+	end
+	
+	describe 'Third Page of the Letter Search Game' do
+		before {visit game_letter_search_3_path}
+		
+		let (:heading) {' '}
+		let (:page_title) {'Letter Search Game'}		
+  
+  	it_should_behave_like "all static pages"
+  end
+
+
+	describe 'Fourth Page of the Letter Search Game' do
+		before {visit game_letter_search_4_path}
+		
+		let (:heading) {'4'}
+		let (:page_title) {'Letter Search Game'}		
+  
+  	it_should_behave_like "all static pages"
+  end
+ 	
 	
 	it "should have the right links on the layout" do
 		visit root_path

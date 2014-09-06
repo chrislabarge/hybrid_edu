@@ -13,9 +13,12 @@ match '/printables', to: 'static_pages#printables', via: 'get'
 match '/lessons', 	 to: 'static_pages#lessons', via: 'get'
 match '/common_core', to: 'static_pages#common_core', via: 'get'
 match '/account', to: 'static_pages#account', via: 'get'
-match '/lettertrace', to: 'static_pages#lettertrace', via: 'get'  
- 
- 
+
+match '/lettertrace', 	to: 	'static_pages#lettertrace', via: 'get'  
+match '/game_letter_search', to: 'static_pages#game_letter_search', via: 'get' 
+match '/game_letter_search_2', to: 'static_pages#game_letter_search_2', via: 'get' 
+match '/game_letter_search_3', to: 'static_pages#game_letter_search_3', via: 'get' 
+match '/game_letter_search_4', to: 'static_pages#game_letter_search_4', via: 'get' 
  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -27,6 +27,20 @@ class StaticPagesController < ApplicationController
 	def lettertrace
 	end
 	
+	def game_letter_search
+		@games = true
+	end
 	
+	def game_letter_search_2
+		@games = true
+	end
+	
+	def game_letter_search_3
+		@games = true
+	end
+	
+	def game_letter_search_4
+		@games = true
+	end
 	
 end

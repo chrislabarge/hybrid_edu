@@ -1,0 +1,84 @@
+<%provide(:title, 'Letter Search Game')%>
+
+
+
+<%letter = alphabet%>	
+<%@lt1= false%>
+<%@lt2= false%>
+<%@level = 4%>
+<%buttons = 30%>
+<%array_index = 0%>
+<%dog = (0..5).to_a.sample%>
+<%house = (24..29).to_a.sample%>
+
+
+
+
+
+
+
+
+
+<%button_array= [ ]%>
+<%button_array = gay_array(buttons, letter, 3)%>
+
+<%button_array = letter_maze(button_array, letter, dog, house)%>
+
+
+<script>
+function lightitup() {
+    var x = document.getElementById("muteletters");
+    x.style.fontsize = "2.8em";           
+    x.style.color = "white"; 
+		x.style.textShadow = "rgb(255, 255, 255) 0px 0px 17px"
+	
+}
+</script> 
+
+
+
+
+
+
+<div class='row' style="height:58px"> <!--this prevents from the rows getting shifted down the page when the star appears-->
+
+	<div class='col-xs-4 center'>
+		<%=image_tag("star.png", width:'50', height: '50', id:'star1')%>
+	</div>
+
+	<div class='col-xs-4 center'>
+		<%=image_tag("star.png", width:'50', height: '50', id:'star2')%>
+	</div>
+	
+	<div class='col-xs-4 center'>
+		<%=image_tag("star.png", width:'50', height: '50', id:'star3')%>
+	</div>
+
+</div>
+
+<div class='row edu'>	
+	<div class='col-xs-12 center' style="margin-top:0px">	
+		<h1>Where is <%=letter%> ?</h1>
+	</div>
+</div>
+
+<div class='row edu center'>	
+	<%while array_index < 30 do %> 	
+		<div class= 'col-xs-2' >	
+			<div class="button-box">
+				<%if button_array[array_index] == letter%> <!--I dont need the exta script here-->
+					<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[array_index]%></button>
+				<%else%> 
+					<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[array_index]%>><%=button_array[array_index]%></button>
+				<%end%> 
+			</div>
+	 </div>			
+ 	<%array_index += 1%>
+ 	<%end%>	 
+	
+
+        
+
+</div> 
+
+	<%=render 'layouts/gamescript'%>

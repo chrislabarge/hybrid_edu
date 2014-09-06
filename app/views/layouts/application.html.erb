@@ -16,10 +16,13 @@
   
 
 </head>
-<body>
+<body class="<%= @games ? 'game-body' : ''%>">
 
- <%= render 'layouts/header' %>
- 
+  <!--HOW DOES THIS WORK>!?!?!?!? IT IS AWESOME-->
+	 <%= @games ? (nil) : (render 'layouts/header')%>
+
+ 	
+ 	
  	<!-- ################################ TOP OF CARAOSELELEL TESTTTT ###-->
  <% if current_page?('/')%>
  		 <!-- Carousel
@@ -86,13 +89,82 @@
 			<%= content_tag(:div, value, class: "alert alert-#{key}") %> <!--This is pretty badass, checkout the content_tag function-->
 		<% end %>
 		<%= yield %>
-		<%= render 'layouts/footer' %>
+		
 	<!--<%= debug(params) if Rails.env.development? %> -->
 	</div>
 	
+	<% if current_page?('/')%>
+			
+				
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="div" id="green">
+        <div class="container">
+        	<div class="row featurette">
+        		<div class="col-md-7">
+          		<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+          		<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        		</div>
+       			
+       			<div class="col-md-5">
+          		<div class="feature-div">
+          			<%= image_tag('teacher_printables.jpg', class:"featurette-image img-responsive")%>
+        			</div>
+        		</div>
+      		
+      		</div>
+				</div>
+			</div>
+			
+			<div class="div" id="blue">
+				<div class="container">	
+					<div class="row featurette">
+        		<div class="col-md-5">
+          		<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        		</div>
+        		
+        		<div class="col-md-7">
+         		 <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+         		 <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        		</div>
+     		  </div>
+      	</div>
+      </div>
+      
+      <div class="div" id="purple">
+        <div class="container">
+        	<div class="row featurette">
+        		<div class="col-md-7">
+          		<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+          		<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        		</div>
+       			
+       			<div class="col-md-5">
+          		<%= image_tag('teacher_printables.jpg', class:"featurette-image img-responsive")%>
+        		</div>
+      		
+      		</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+   
+	<%else nil%>
+	<%end%>
 	
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
+	
+	<div class='container'>
+		<%= @games ? (nil) : (render 'layouts/footer')%>
+	</div>
+	
+	
+    <!-- Bootstrap core JavaScript -->
+  <!--  ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
   <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
     <script src="../../dist/js/bootstrap.min.js"></script>

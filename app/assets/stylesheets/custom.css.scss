@@ -1,0 +1,1274 @@
+@import "bootstrap";
+
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+$grayLighter: #E6E6E6;
+$green: #76FF52;
+$blue: #32DAE8;
+$purple: #7343FF;
+$red: #EA324D;
+$orange: #FFAE36;
+$gray: #42456E;
+
+$brightGreen: #13F022;
+$darkGreen:  #5ECC42;
+$liteGreen: rgba(118, 255, 82, 0.37);
+$seethruGreen: rgba(118, 255, 82, 0.35) ;
+
+$brightBlue: #1CBDE8;
+$darkBlue: #1CBDE8;
+$liteBlue: #B6E4E9;
+
+$brightPurple:#941AFF;
+$darkPurple:#5527DB;
+$litePurple:#DFD5FF;
+
+$brightRed:#EA2323;
+$darkRed:#D6223D;
+$liteRed:#E897A3;
+
+$brightOrange:#FF9D06;
+$liteOrange:#FFD595;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+
+@mixin test_font {
+	
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.42857;
+}
+
+
+#liteGreen {
+	background-color:$green ;
+}
+
+#liteBlue {
+	background-color:$blue ;
+}
+
+#litePurple {
+	background-color:$purple ;
+}
+
+#liteRed {
+	background-color:$red ;
+}
+
+#liteOrange {
+	background-color:$orange ;
+}
+
+
+/* universal */
+
+html {
+  overflow-y: scroll; /*Find out what this means*/
+}
+
+a:focus {     /*-- this is to prevent the dotted box from appears on links--*/
+    outline: none; 
+}
+
+body {
+  padding-top: 50px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.vertical-align{
+    position:relative; /* or absolute */
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+
+/* TTTypography */
+
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-top: 15px;
+	margin-bottom: 15px;
+
+}
+
+h2 {
+  font-size: 1.9em;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* FOOTER */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+	color: #f00;
+	ul {
+		list-style: none;
+		margin: 00 18px 0;
+	}
+}
+
+.field_with_errors {
+	@extend .control-group;
+	@extend .error;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 300px;
+  margin-bottom: 50px; /*------------This is bottom of carasel to content*/
+
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+ 
+	line-height: 1.4;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 300px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 300px;
+}
+
+.bar {
+	background-color: #72ff5e;
+	height: 50px;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+
+/* Users index */
+
+.users {
+	list-style: none;
+	margin: 0;
+	li {
+		overflow: auto;
+		padding: 10px 0;
+		border-top: 1px solid $grayLighter;
+		&:last-child {
+			border-bottom: 1px solid $grayLighter
+		}
+	}
+}
+
+/* ----- This is experimental stuff ALWAYS AT THE BOTTOM -------   */
+
+
+.marketing {
+	text-align: center;
+}
+
+
+.market_bar{
+	background-color:#dfff7d;
+	border-radius: 20px;
+}
+
+.icon {
+	border-radius: 20%;
+	border: solid 5px $liteGreen;
+	height: 100%;
+	width: 100%;
+	display:none;
+	padding: 0px; /*--this is to counter act the padding with the button-*/
+	
+}
+
+.icon:hover {
+	  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+}
+
+
+
+/*--------------------------------------------------------------------*/
+
+/*---THIS IS ALL OF THE LIGHT HOVER COLOR STUFF BENEATH THE ICONS---*/
+#icon1 {
+		
+}
+
+
+#icon2 {
+
+}
+
+#icon3 {
+
+}
+
+#icon4 {
+
+}
+
+#icon5 {
+
+}
+
+
+/*--------------------------------------------------------------------*/
+/*------------------------NAV ICON STUFF------------------------------*/
+
+.icon_font {
+	display: none;
+}
+
+
+
+.right_pad {  /*-------THIS IS FOR THE LAST BUTTON*/
+	padding-right: 20px;
+}
+
+
+
+
+.tab_backgroundz { /*-----Nav Icons in-between 768-1280px----*/
+	border-radius: 60%;
+	width: 55px;
+	height: 55px;
+  margin-left: 2px;
+	margin-right: 0px;
+	margin-top: -10px;
+	cursor: pointer;
+	
+}
+
+
+.p_tag{
+	line-height:	1.0em;
+
+
+}
+
+
+.navbar-nav > li > a.color_tabs {  /*--------def not theright way*/
+
+    margin-bottom: -5px;
+    padding-bottom: 0px;
+  	font-size: .8em;
+		color: $gray;
+		font-weight: 470;
+}
+
+
+
+
+
+
+
+.li_icon {
+	width: 90px;
+}
+
+
+
+
+#green {
+	background-color: $green;
+
+}
+#green:hover, #green:focus {
+	
+	background-color: $brightGreen;
+	
+}
+
+
+#blue{
+	background-color: $blue;
+	
+}
+
+
+#blue:hover, #blue:focus {
+	background-color: $brightBlue;
+}
+
+#purple{
+	background-color: $purple;
+}
+
+#purple:hover, #purple:focus {
+	background-color: $darkPurple;
+}
+
+#red {
+	background-color: $red;
+	
+}
+
+#red:hover, #red:focus {
+	background-color: $darkRed;
+}
+
+
+
+#orange{
+	background-color: $orange;
+}
+
+#orange:hover, #orange:focus {
+	background-color: $brightOrange;
+}
+
+
+#circle_first {
+ border: 10px solid $seethruGreen;
+}
+
+#circle_middle {
+	border: 3.5px solid $blue;
+}
+#circle_last {
+	border: 3.5px solid $orange;
+}
+
+
+/* ---------GREEN BUTTON YO-----------------*/
+
+.btn-green { 
+  color: #FFFFFF; 
+  background-color: #76FF52; 
+  border-color: #76FF52; 
+	font-size: 1.5em;
+} 
+ 
+.btn-green:hover, 
+.btn-green:focus, 
+.btn-green:active, 
+.btn-green.active, 
+.open .dropdown-toggle.btn-green { 
+  color: #FFFFFF; 
+  background-color: #13F022; 
+  border-color: #76FF52; 
+} 
+ 
+.btn-green:active, 
+.btn-green.active, 
+.open .dropdown-toggle.btn-green { 
+  background-image: none; 
+} 
+ 
+.btn-green.disabled, 
+.btn-green[disabled], 
+fieldset[disabled] .btn-green, 
+.btn-green.disabled:hover, 
+.btn-green[disabled]:hover, 
+fieldset[disabled] .btn-green:hover, 
+.btn-green.disabled:focus, 
+.btn-green[disabled]:focus, 
+fieldset[disabled] .btn-green:focus, 
+.btn-green.disabled:active, 
+.btn-green[disabled]:active, 
+fieldset[disabled] .btn-green:active, 
+.btn-green.disabled.active, 
+.btn-green[disabled].active, 
+fieldset[disabled] .btn-green.active { 
+  background-color: #76FF52; 
+  border-color: #76FF52; 
+} 
+ 
+.btn-green .badge { 
+  color: #76FF52; 
+  background-color: #FFFFFF; 
+}
+
+/* ---------BLUE BUTTON YO-----------------*/
+
+.btn-blue { 
+  color: #FFFFFF; 
+  background-color: #32DAE8; 
+  border-color: #32DAE8; 
+	font-size: 1.5em;
+} 
+ 
+.btn-blue:hover, 
+.btn-blue:focus, 
+.btn-blue:active, 
+.btn-blue.active, 
+.open .dropdown-toggle.btn-blue { 
+  color: #FFFFFF; 
+  background-color: #13CFF0; 
+  border-color: #32DAE8; 
+} 
+ 
+.btn-blue:active, 
+.btn-blue.active, 
+.open .dropdown-toggle.btn-blue { 
+  background-image: none; 
+} 
+ 
+.btn-blue.disabled, 
+.btn-blue[disabled], 
+fieldset[disabled] .btn-blue, 
+.btn-blue.disabled:hover, 
+.btn-blue[disabled]:hover, 
+fieldset[disabled] .btn-blue:hover, 
+.btn-blue.disabled:focus, 
+.btn-blue[disabled]:focus, 
+fieldset[disabled] .btn-blue:focus, 
+.btn-blue.disabled:active, 
+.btn-blue[disabled]:active, 
+fieldset[disabled] .btn-blue:active, 
+.btn-blue.disabled.active, 
+.btn-blue[disabled].active, 
+fieldset[disabled] .btn-blue.active { 
+  background-color: #32DAE8; 
+  border-color: #32DAE8; 
+} 
+ 
+.btn-blue .badge { 
+  color: #32DAE8; 
+  background-color: #FFFFFF; 
+}
+
+
+
+/* ---------ORANGE BUTTON YO-----------------*/
+
+.btn-orange { 
+  color: #FFFFFF; 
+  background-color: #FFAE36; 
+  border-color: #FFAE36; 
+	font-size: 1.5em;
+} 
+ 
+.btn-orange:hover, 
+.btn-orange:focus, 
+.btn-orange:active, 
+.btn-orange.active, 
+.open .dropdown-toggle.btn-orange { 
+  color: #FFFFFF; 
+  background-color: #F08C13; 
+  border-color: #FFAE36; 
+} 
+ 
+.btn-orange:active, 
+.btn-orange.active, 
+.open .dropdown-toggle.btn-orange { 
+  background-image: none; 
+} 
+ 
+.btn-orange.disabled, 
+.btn-orange[disabled], 
+fieldset[disabled] .btn-orange, 
+.btn-orange.disabled:hover, 
+.btn-orange[disabled]:hover, 
+fieldset[disabled] .btn-orange:hover, 
+.btn-orange.disabled:focus, 
+.btn-orange[disabled]:focus, 
+fieldset[disabled] .btn-orange:focus, 
+.btn-orange.disabled:active, 
+.btn-orange[disabled]:active, 
+fieldset[disabled] .btn-orange:active, 
+.btn-orange.disabled.active, 
+.btn-orange[disabled].active, 
+fieldset[disabled] .btn-orange.active { 
+  background-color: #FFAE36; 
+  border-color: #FFAE36; 
+} 
+ 
+.btn-orange .badge { 
+  color: #FFAE36; 
+  background-color: #FFFFFF; 
+}
+
+/*########################################################
+-----------	NAVBAR ICON STUFF -------------------
+	########################################################
+*/
+
+.nav_icon {
+	margin-top:10px;
+}
+
+.nav_icon_account {
+	margin-top:5px;
+}
+
+.color_tabs {
+ margin-left:0px;
+ margin-right:0px;
+ line-height:0px;   
+		
+}
+
+
+/*########################################################
+-----------	PAGE HEADING STUFF -------------------
+	########################################################
+*/
+	
+	.heading_icon {
+		padding-top: 0px;
+	}
+  
+  .heading {
+ 	
+ 	color: white;
+ 	height: 110px;
+  text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+  
+  
+ }
+ 
+ .green {
+ 	background-color: $green;
+ }
+ 
+ .blue {
+ 	background-color: $blue;
+ }
+ 
+ .purple {
+ 	background-color: $purple;
+ }
+ 
+ .red {
+ 	background-color: $red;
+ }
+ 
+ .orange {
+ 	background-color: $orange;
+ }	
+
+
+/*########################################################
+-----------	Blog Style Pages -------------------
+	########################################################
+*/
+
+
+
+
+.blog-content {
+
+
+}		
+
+.blog_photo {
+ height: 110%;
+ width: 110%;
+ 
+
+}
+
+.worksheet_div {
+	border-radius: 30px;
+	background-color: $green;
+	padding: 0px 20px 0px 20px;
+	margin-top: 50px;	
+
+}
+
+.worksheet {
+	
+	width: 90%;	
+	height: 90%;
+	border: solid;
+  border-width: 1px;
+  border-color: black;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	
+	 /* padding: 38px 30px 38px 30px; HAD TO BE 10px BIGGER BECAUSE ON AN ILLUSION WITH BORDER*/
+}
+
+.blog_summary {
+	/*margin-top: -70px;*/
+}
+
+.pdf_icon {
+	width:  15%;
+	height: 15%;
+}
+
+.select_form {
+  margin-top: 20px;
+}
+
+
+.print_download {
+ 	
+	font-size:2.5em;
+
+}
+
+.arrow {
+	height: 80%;
+	width: 80%;
+}
+
+
+/*########################################################
+-----------	Featurette on the Bottom of the Home -------------------
+	########################################################
+*/
+
+.featurette-image{
+	
+	padding: 10px 0px 10px 0px;
+}
+
+
+
+
+/*########################################################
+-----------	Game FIRST -------------------
+	########################################################
+*/
+
+.button-box {
+	height: 12vw;
+	width: 12vw;
+	margin-top:15px;
+}
+
+.game-body {
+	padding-top: 50px;
+	background-color: #494057;
+}
+
+
+.btn-letter {
+    color: #333;
+    background-color: #FFF;
+    
+}
+
+.edu {
+h1 {font-size:2.5em;color: #d3cbfe;}
+h2 {font-size:2.8em;color:black;}
+}
+
+
+
+.edu_col {
+padding-left: 18px;
+}
+
+.btn-circle.btn-xl {
+  width: 100%;
+  height: 100%;
+
+  font-weight:500;
+  font-size: 6vw;
+  text-align:center;
+  border-radius: 50%;
+ /* margin: 12px; */
+}
+
+.btn-letter.active {
+background-color: #47fe92;
+border-width:4px;
+border-color: white;
+
+}
+
+.btn-circle.btn-xl.active {
+color: white;
+text-shadow: rgb(255, 255, 255) 0px 0px 8Spx;
+}
+
+/*.btn-default:hover {
+    color: #333;
+    background-color: #fff;
+    text-shadow: 0px 0px 3px rgba(255, 0, 0, 1);
+    
+    border-color: red;
+border-width: 1.7px
+} */
+
+.butt {
+
+}
+
+.disabled {
+	background-color: #fe212e;
+	border-width:4px;
+  border-color: white;
+	-webkit-box-shadow: 3px 3px 30px 0px rgba(255, 41, 110, 1);
+-moz-box-shadow:    3px 3px 30px 0px rgba(255, 41, 110, 1);
+box-shadow:         3px 3px 30px 0px rgba(255, 41, 110, 1);
+
+}
+
+.btn.disabled {
+	opacity: 1;
+} 
+
+.btn-circle.btn-xl.disabled {
+	color: white ;
+	text-shadow: rgb(255, 255, 255) 0px 0px 17px;
+}
+
+#star1 {
+	display: none;
+  padding-top: 10px;
+}
+
+#star2 {
+	display: none;
+  padding-top: 10px;
+}
+
+#star3 {
+	display: none;
+  padding-top: 10px;
+}
+
+.modal-sm {
+	width: 70%;
+	margin-left:15%;
+	
+}
+
+.modal-content {
+	background-color:rgba(255, 255, 255, 0.67);
+}
+
+#smiley {
+ 		margin-top: 10px;
+ 		margin-left: auto;
+    margin-right: auto;
+}
+
+#next {
+margin-top:10px;
+margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+/*########################################################
+-----------	RESPONSIVE DESIGN..HOLY GRAIL -------------------
+	########################################################
+*/
+
+
+/*--------(-xs-) Xtra-small Screen Size ONLY!!!--------------*/
+
+/*------max width XS DEVICES-----*/
+
+/*----------You don't need min-width for xtra small devices sense
+						It is mobible first in bootstrap...duh!!-----------*/
+
+
+@media (max-width: 767px) {
+
+
+.sheets_div {
+	background-color: $green;
+	
+	margin:  0px -30px 0px -30px; /*This was because there was weird white space on the green bars on either side of the blog picture*/
+  padding: 30px 0px 30px 0px;
+ 
+}
+
+.blog_photo{
+	margin-left: -15px;
+}
+
+.arrow {
+	height: 100px;
+	width: 80px;
+}
+	
+p.p_tag {
+		color: white;
+		font-size: 2em;
+		font-weight: 500;
+	}
+
+
+
+.navbar-collapse {
+	background-color: #424242;
+}		
+	
+	
+	#liteGreen:hover, #liteGreen:focus {
+	background-color: $brightGreen;
+}
+
+#liteBlue:hover, #liteBlue:focus {
+	background-color: $darkBlue;
+}
+
+#litePurple:hover, #litePurple:focus {
+	background-color: $darkPurple;
+}
+
+#liteRed:hover, #liteRed:focus {
+	background-color:$darkRed;
+}
+
+#liteOrange:hover, #liteOrange:focus {
+	background-color:$brightOrange;
+}
+
+	
+	.li_icon,  {
+	width: 100%;
+	height: 120px;
+	padding-bottom: 20px;	
+	}
+	
+	.tab_backgroundz{
+		margin-top:25px;
+	}
+	
+	.mobile_menu {
+		margin-left: 70px;
+		margin-top: -80px;
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-top:10px; /* this causes the heading to be padded*/
+		height: 100px;
+		width: 80%;
+		border-radius: 20px;
+	&:hover{
+		
+	}	
+	}
+
+
+}
+
+
+
+
+/*--------(-sm-) Small Screen Size...Tablets and mini comps--------------*/
+
+
+
+/*-----------THIS IS ALL MIN WIDTH..DEVICES NEED TO BE ATLEST # TO RECEIVE THIS CODE*/
+
+
+@media (min-width: 768px) {
+	
+ .sheets_div {
+	background-color: $green;
+	margin-top: 50px;
+	border-radius: 30px;
+  padding: 32px 0px 32px 0;
+ 
+}
+ 
+.blog_photo {
+ height: 90%;
+ width: 90%;
+ border: solid;
+ border-width: 10px;
+ border-color: white;
+ border-radius: 30px;
+} 
+ /*----------this is from the bootstrap carosel page i beleive------------*/	 
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+	
+	
+	/* Bump up size of carousel content */
+  .carousel-caption p {
+    
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+	
+/*-----------------------------------------------------------------------*/	
+
+/*--------NAV BAR ICON CRAP-NEEED TO CLEAN UP--------------*/	
+	
+	#icon1:hover {
+	 background-color: $liteGreen;
+	}
+
+	#icon2:hover{
+		background-color: $liteBlue;
+	}
+
+	#icon3:hover {
+		background-color: $litePurple;
+	}
+
+	#icon4:hover {
+		background-color: $liteRed;
+	}
+
+	#icon5:hover {
+		background-color: $liteOrange;
+	}
+
+
+	
+	.navbar-nav > li > a {
+    line-height: 60px;
+		}
+	
+
+	.navbar-nav > li > a.color_tabs {  /*--------def not theright way*/
+		 line-height: 0px;
+		}
+		
+	#liteGreen {
+		background-color:rgba(0, 0, 0, 0) ;
+	}
+
+
+	#liteBlue {
+		background-color:rgba(0, 0, 0, 0) ;
+	}
+
+	#litePurple {
+		background-color:rgba(0, 0, 0, 0) ;
+	}
+
+	#liteRed {
+		background-color:rgba(0, 0, 0, 0) ;
+	}
+
+	#liteOrange {
+		background-color:rgba(0, 0, 0, 0) ;
+	}	
+
+/*-------------------------------END OF NAV---CLEAN THE FUCK UP--------*/	
+	
+	
+	body {
+		padding-top: 90px;
+	}
+	
+	.print_download {
+ 		font-size:2.5em;
+	}
+
+
+}
+
+
+/*--------(-md-) Medium Screen Size--------------*/
+
+
+@media (min-width: 996px) {
+
+  
+  .print_download {
+ 		font-size:3em;
+	}
+
+ 
+	
+	.carousel {
+
+  	height: 500px;
+
+	}
+  .carousel .item {
+  	height: 500px;
+  }
+ 
+  
+  .carousel-inner > .item > img {
+  	height:500px
+  }
+		
+  .featurette-heading {
+    font-size: 50px;
+  }
+
+	.bar {
+		height: 80px;
+	}
+	
+
+
+
+.heading_font {
+	line-height: 80px;
+	
+}
+
+
+body {
+	padding-top: 120px;
+}
+
+}
+
+
+
+/*--------(-lg-) Largest Screen Size--------------*/
+
+@media (min-width: 1200px) {
+  
+  
+	.button-box {
+		height: 163px;
+		width: 163px;
+	  
+	}
+	
+	.btn-circle.btn-xl {
+ 
+  font-weight:500;
+  font-size: 6em;
+  
+  border-radius: 50%;
+ /* margin: 12px; */
+}
+
+  
+  
+  /*--------------Large Screen Nav Bar Buttons (You created these first)-------------------*/
+	.navbar-fixed-top {
+    min-height: 120px;
+	}
+
+
+
+
+	.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 120px;
+	}
+
+	.navbar-nav > li > a.color_tabs {  /*--------def not theright way*/
+
+    padding-bottom: 0px;
+    line-height: 0px;
+		font-size: .8em;
+		color: $gray;
+		font-weight: 600;
+	}
+
+
+
+
+	.tab_backgroundz { /*-----THIS IS THE COLOR'D NAV ICON UP TOP----*/
+		border-radius: 60%;
+		width: 80px;
+		height: 80px;
+ 		 margin-left: 20px;
+		margin-right: 0px;
+		margin-top: 10px;
+		cursor: pointer;
+
+	}
+
+
+	.nav_icon {
+		margin-top:15px;
+	}
+
+
+	.li_icon {     /*--This is the width of the icon section--*/
+		width: 142px;
+	}
+
+	.p_tag {
+		margin-top: 6px; 
+		padding-bottom: 6px;
+	}
+  
+  /*-------------------------------------------------------*/
+  
+  
+  
+  .featurette-heading {
+    margin-top: 120px;
+  }
+
+  .print_download {
+  	 	font-size:3.5em;
+  }
+	
+}
+
+/*--------------DON'T KNOW WHAT THIS DOES...--------- 
+.menu{	
+	display:block;
+	width:80px;
+	height:80px;
+	border-radius:50px;
+	font-size:20px;
+	color:#fff;
+	line-height:100px;
+	text-align:center;
+	text-decoration:none;
+	background:#000
+	}
+.menu:hover{
+	color:#ccc;
+	text-decoration:none;
+	background:#333
+}
+*/
+
+/*--GOING BUCK WILD SEN--*/ 
+ 
+
+  
+  .tinty {
+  	position: relative;
+  }
+  
+  .tinty:before {
+  	content: "";
+    display: block;
+    position: absolute;
+    border-radius: 20%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: none;
+  }
+  
+  
+  
+  .tinty:hover:before {
+  	background: rgba(0,0,0, 0.4);
+  }
+  
+  .tinty:active:before {
+  	background: rgba(0,0,0, 0.8);
+  }
+  
+
+ 
+ 
