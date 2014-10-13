@@ -27,6 +27,9 @@ class StaticPagesController < ApplicationController
 	def lettertrace
 	end
 	
+	def letters_in_words
+	end
+	
 	def game_letter_search
 		@games = true
 	end

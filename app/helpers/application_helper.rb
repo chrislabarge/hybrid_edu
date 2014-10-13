@@ -1,5 +1,35 @@
 module ApplicationHelper
 
+#this is for a boolean in javascript for deciding where the dog goes
+def btn_boolean(current_button, correct_array) 
+ 	if current_button == 8 and correct_array[7] - correct_array[6] == 1 # going right or left
+ 		if correct_array[2] - correct_array[1] == 6
+ 			return 'translateX: "525"'  #right
+ 		else
+ 			return 	'translateX: -"525"' #left
+ 		end
+	else
+		return 'translateY: "400"' #down
+ 	end
+end
+
+	
+def hello_dare(current_button, correct_array)
+	return '525%'
+end	
+
+def please_work(array)
+	if array[7] - array[6] == 1
+	return true
+	else
+	false
+	end
+end
+
+	
+	
+	
+	
 	#returns the full title on a per-page basis
 	def full_title(page_title)
 		base_title = "Hybrid Edu"
@@ -62,6 +92,7 @@ end
 
 end
 	
+
 	
 	
 end

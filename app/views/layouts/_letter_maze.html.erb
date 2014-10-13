@@ -1,95 +1,3 @@
-<%provide(:title, 'Letter Search Game')%>
-
-
-<%slipknot = 6%>
-<%=twizzy = 5%>
-<%very = 1 %>
-
-
-
-
-
-<%slipknot = 9%>
-<%letter = alphabet%>	
-<% @lt1= false %>
-<% @lt2= false %>
-<%@level = 4%>
-<%buttons = 30%>
-<%array_index = 0%>
-<%dog = (0..5).to_a.sample%>
-<%house = (24..29).to_a.sample%>
-<% while house - dog == 24 do%> 
-<% dog = (0..5).to_a.sample%>
-<% end %>
-<%correct_id = 0%>
-
-
-
-
-<%button_array= [ ]%>
-<%button_array = gay_array(buttons, letter, 0)%>
-
-<%button_array = letter_maze(button_array, letter, dog, house)%>
-
-
-<script>
-function lightitup() {
-    var x = document.getElementById("muteletters");
-    x.style.fontsize = "2.8em";           
-    x.style.color = "white"; 
-		x.style.textShadow = "rgb(255, 255, 255) 0px 0px 17px"
-	
-}
-</script> 
-
-
-<%correct_array= doggy(button_array, letter)%>
-<%@correct_array= doggy(button_array, letter)%>
-
-
-
-
-<div class='row edu'>	
-	<div class='col-xs-12 center' style="margin-top:0px">	
-		<h1>Where is <%=letter%> ?</h1> 
-		<h1><%=@correct_array%></h1> <!--  THIS WAS TO RETURN A ARRAY OF THE INDEX'S OF THE SEARCH LETTER-->
-		<h1><%= hello_dare(8, @correct_array)%></h1>
-	</div>
-</div>
-
-<div class='row' >
-	<div class='col-xs-2 col-xs-offset-<%= dog * 2%>'>	
-		<%=image_tag("dog.png", width:'100%', height: '100%', id:'testies')%>
-	</div>
-</div> 
-
-
-<div class='row edu center'>	
-		
-	<%while array_index < 30 do %> 	
-		<div class= 'col-xs-2' >	<!-- -->
-			<div class="button-box">
-				<%if button_array[array_index] == letter%> <!--I dont need the exta script here-->
-					<% correct_id = correct_id + 1%> <!-- for jquery, look and the id below-->
-					<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button" id="<%="button_#{correct_btn_id(correct_array, correct_id)}"%>"><%=button_array[array_index]%></button>
-					
-				<%else%> 
-					<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text="<%=button_array[array_index]%>"><%=button_array[array_index]%></button>
-				<%end%> 
-			</div>
-	 </div>			
- 	<%array_index += 1%>
- 	<%end%>	 
-	
-</div>
-
-<div class='row' >
-	<div class='col-xs-2 col-xs-offset-<%=(house - 24) * 2%>'>	
-		<%=image_tag("dog_house.png", width:'100%', height: '100%', id:'testies')%>
-	</div>
-</div> 
-
- 
 <%=%>
 	
 	<script>
@@ -106,8 +14,6 @@ function lightitup() {
 				var activeBtn8 = false
 				var activeBtn9 = false	
   		  var activeBtn10 = false
-  		  var wtf = <%please_work(@correct_array)%>
-  		  
   		  
   		 	//This is for making the button red.. i beleive..double check				
   		 
@@ -319,11 +225,8 @@ function lightitup() {
 					
 					$("#testies").velocity({
    				 translateZ: 0, // Force HA by animating a 3D property   #if it is going right and the button is directly after the last
-   			  <%if please_work(@correct_array)%> 
-   			   translateX: "<%=hello_dare(hi, @correct_array)%>",
-    			<%else%>	
-					translateY: "400%",
-					<%end%>
+   			<%=hello_dare(8, @correct_array)%>,
+    				
 					}); 	
 				
 				}

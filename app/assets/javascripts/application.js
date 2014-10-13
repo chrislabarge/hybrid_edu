@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
-//= require jquery.velocity
+//= require velocity.min
 //= require velocity.ui
 //= require fastclick
 //= require_tree .

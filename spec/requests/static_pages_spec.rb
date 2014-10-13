@@ -95,7 +95,7 @@ describe "Static pages" do
 	
 	
 	
-	describe 'Printable document pages' do
+	describe 'Printable Letter Trace Worsheet' do
 		before {visit lettertrace_path }
 		
 		let(:heading) 		{'Letter Search Worksheets'}
@@ -103,9 +103,18 @@ describe "Static pages" do
 		
 		it_should_behave_like "all static pages"
 	end
+
+	describe 'Printable Letters in Words Worksheets' do
+		before {visit letters_in_words_path}
+		
+		let(:heading) {'Letters in Words Worksheets'} 
+		let(:page_title) {'Printable Worksheets'}
+		
+		it_should_behave_like "all static pages"
+	end	
 	
-
-
+	
+	
 
 
 
