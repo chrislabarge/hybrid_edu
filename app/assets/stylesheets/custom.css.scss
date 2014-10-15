@@ -297,6 +297,25 @@ input {
 }
 
 
+/*these are the experimental border colors around the marketing circles...trying to make 
+		it so it works on all browser...the way it was benfore was breaking in safari*/
+.circle_first {
+  -webkit-border-radius: 30%;
+-moz-border-radius: 30%;
+border-radius: 30%;
+-khtml-border-radius: 30%;
+background-color: $green;
+padding:10px;
+}
+
+#circle_middle {
+	border: 3.5px solid $blue;
+}
+#circle_last {
+	border: 3.5px solid $orange;
+}
+
+
 
 /*--------------------------------------------------------------------*/
 
@@ -429,16 +448,6 @@ input {
 }
 
 
-#circle_first {
- border: 10px solid $seethruGreen;
-}
-
-#circle_middle {
-	border: 3.5px solid $blue;
-}
-#circle_last {
-	border: 3.5px solid $orange;
-}
 
 
 /* ---------GREEN BUTTON YO-----------------*/
@@ -1023,6 +1032,10 @@ p.p_tag {
  
  /*--- this is for the blog page...new and clean ---*/
 	
+	.blog-content {
+		padding-left:25px;
+	}
+
 	.arrow {
 		margin-top: 25px
 	}

@@ -44,7 +44,7 @@ end
 
 green = ["green","printables.png","Printable Material"]
 blue  = ["blue", "games.png", "Learning Games"]
-purple = ["purple", "idea.png", "Creative Lessons"]
+purple = ["purple", "idea.png", "Creative Ideas"]
 red = ["red", "apple.png", "Common Core Resources"]
 orange = ["orange", 'user.png', 'My Account']
 
