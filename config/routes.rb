@@ -1,4 +1,7 @@
 HybridEdu::Application.routes.draw do
+  get "printables/letter_tracing"
+  get "printables/letters_in_words"
+  get "printables/letter_search"
 resources :users
 resources :sessions, only: [:new, :create, :destroy]  #this is so not all the Restful routes like 'show' and 'edit' dont get passed sense we have no need for them for the sessions (token)
 

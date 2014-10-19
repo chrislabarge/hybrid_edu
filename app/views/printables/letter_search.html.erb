@@ -1,0 +1,71 @@
+<%provide(:title,'Printable Worksheets')%>
+
+
+
+
+<div class="row visible-xs-block">	
+	<div class="col-xs-12 col-xs green-bar"></div>
+	 <%=image_tag('test_sheets.jpg', class:"img-responsive")%>
+	<div class="col-xs-12 green-bar"></div>
+</div>	
+
+<div class='row printable-row' style="margin-top:50px">	
+	
+	
+	<div class="col-sm-7">
+		
+		<div class="green-border hidden-xs">
+		
+			<div class="white-border">
+				<%=image_tag('test_sheets.jpg', class:"img-responsive photo-round")%>	
+			</div>
+		</div>
+	
+		<div class="blog-content">	
+			<h1 style="margin-top:30px;">Letters in Words Worksheets</h1>
+				<p class="lead"> These are the perfect way to get the little ones recognizing specific letters.
+					The font is made to look hand written to allow for an easy transition to print letters.
+				</p>
+			
+				<ul class="lead">
+					<li>Capital Letters A-Z</li>
+					<li>Lower Case Letters a-z</li>
+					<li>Capital & Lowers Case Letters A-z</li>
+				</ul>
+		</div>	
+	</div>
+	
+	<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-md-4 col-sm-offset-0 col-md-offset-1">
+		<div class="worksheet_div img-center center">
+
+			<%=image_tag("heyitsa.jpg", class:"worksheet")%> 
+
+		</div>
+		
+		<div class="row">
+			
+			<div class="col-sm-6  col-sm-offset-1 col-lg-5 col-lg-offset-2  print-div">
+				<h2 style="font-size: 2.3em">Print or Download</h2>
+			</div>
+			
+			<div class="col-sm-4 col-lg-3 arrow">
+				<%=image_tag("arrow.png", class:"img-responsive center-block", size:"65")%>
+			</div>
+			
+			<div class="col-xs-12">
+				<select class="form-control input-lg select_form img-center" id="dynamic_select">
+   	  		<option value="" selected>Select Printables</option>
+    			<option value="https://drive.google.com/file/d/0B8TeTx1CN-rpczVYTGVvSVhNNWs/edit?usp=sharing">Upper and Lower Case a-Z</option>
+    			<option value="https://drive.google.com/file/d/0B8TeTx1CN-rpd2JWS3ViU292QkE/edit?usp=sharing">Upper Case A-Z</option>
+    			<option value="https://drive.google.com/file/d/0B8TeTx1CN-rpRFV4ZHZiWnU5NEE/edit?usp=sharing">Lower Case a-z</option>
+				</select>	
+			</div>
+			
+			<div class="col-xs-12  col-sm-10 col-sm-offset-1">
+					<h4 class="center">All sets are<%=image_tag('pdf.png',class:"pdf")%> format</h4>
+			</div>
+							
+		</div>
+	</div>
+
+</div>
