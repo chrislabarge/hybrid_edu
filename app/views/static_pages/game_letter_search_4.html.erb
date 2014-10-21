@@ -8,7 +8,6 @@
 
 
 
-
 <%slipknot = 9%>
 <%letter = alphabet%>	
 <% @lt1= false %>
@@ -23,6 +22,8 @@
 <% end %>
 <%correct_id = 0%>
 
+
+	
 
 
 
@@ -46,6 +47,15 @@ function lightitup() {
 <%correct_array= doggy(button_array, letter)%>
 <%@correct_array= doggy(button_array, letter)%>
 
+<!--THIS IS TO MAKE RUBY VARIABLES THAT I CAN USE IN IF STATEMENTS WITHIN JAVASCRIPT TO TELL THE DOG WHERE THE L'S ARE, (WHERE TO GO DOWN OR LEFT OR RIGHT)-->
+<% buttons_go_right = nil %>
+<% buttons_go_down = @correct_array.length - 1%> <!--this is to determin where the L bend occurs, where the dog must go down on the click-->
+
+<% if @correct_array[2] - @correct_array[1] == 6 %>
+	<% buttons_go_right = true %>
+<% else %>
+	<% buttons_go_right = false%>
+<% end %>
 
 
 
@@ -53,7 +63,7 @@ function lightitup() {
 	<div class='col-xs-12 center' style="margin-top:0px">	
 		<h1>Where is <%=letter%> ?</h1> 
 		<h1><%=@correct_array%></h1> <!--  THIS WAS TO RETURN A ARRAY OF THE INDEX'S OF THE SEARCH LETTER-->
-		<h1><%= hello_dare(8, @correct_array)%></h1>
+		<h1><%= buttons_go_down%></h1>
 	</div>
 </div>
 
@@ -106,7 +116,7 @@ function lightitup() {
 				var activeBtn8 = false
 				var activeBtn9 = false	
   		  var activeBtn10 = false
-  		  var wtf = <%please_work(@correct_array)%>
+  		  
   		  
   		  
   		 	//This is for making the button red.. i beleive..double check				
@@ -119,22 +129,32 @@ function lightitup() {
     		});
   		 //---------------------- 
   		 
+  
+  
+  //---DOES NOTHING I BELEIVE
+  
   	$(".correct").click(function(){
   	
   	//currentButton = currentButton + 1
   	
   	});
   	
+  
+  
+//---------THIS IS BUTTON 1 CLICK-----------------------------  
+  
   	$("#button_1").click(function(){
    		 
    		activeBtn1 = true
    		
    		currentButton = currentButton + 1 
    		 
-   		 if (currentButton == 1) {//<% if @level == 4%>1 <%end%>) { //this shows that i can use ruby wraps in the jquery / jaavascript code 
+   		 if (currentButton == 1 ) {//<% if @level == 4%>1 <%end%>) { //this shows that i can use ruby wraps in the jquery / jaavascript code 
 				   		 
    		 
    		 $("#testies").velocity({
+   				 
+   				 
    				 translateZ: 0, // Force HA by animating a 3D property
    				 translateY: "100%",
     				//rotateZ: "45deg" this came with it..for 3d transforms
@@ -142,7 +162,17 @@ function lightitup() {
    		 
    		 } //for this if statement
   		
-  		if (currentButton == 2 && activeBtn2 == true) {
+  		if (activeBtn3 == true) { //THIS IS THE NEWEST STATEMENT I MADE, I THINK I MIGHT BE ABLE TO GET AWAY WITH JUST USING THE ACTIVE BUTTON VARIABLES
+  			$("#testies").velocity({
+   				 translateZ: 0, // Force HA by animating a 3D property
+   				 translateY: "100%",
+    				//rotateZ: "45deg" this came with it..for 3d transforms
+				}); 	
+  			
+  		}
+  		
+  		
+  		if (activeBtn2 == true && activeBtn3 == false) {
   			$("#testies").velocity({
    				 translateZ: 0, // Force HA by animating a 3D property
    				 translateY: "200%",
@@ -151,16 +181,37 @@ function lightitup() {
   			
   		}	
   		
-  		if (currentButton == 3) {
+  		if (activeBtn3 == true) {
   			$("#testies").velocity({
    				 translateZ: 0, // Force HA by animating a 3D property
-   				 translateY: "300%",
+   				 translateY: "310%",
     				//rotateZ: "45deg" this came with it..for 3d transforms
 				}); 	
   			
   		}	
 		 
-  		}); //end of the the button_1 animation			
+  		if (currentButton == 4) { //THIS IS THE NEWEST STATEMENT I MADE, I THINK I MIGHT BE ABLE TO GET AWAY WITH JUST USING THE ACTIVE BUTTON VARIABLES
+  			$("#testies").velocity({
+   				 translateZ: 0, // Force HA by animating a 3D property
+   				 translateY: "310%",
+    			<%if buttons_go_right == true %> 
+    			 translateX: "120%",	
+    			<%else%>
+    			 translateX: "-120%",
+    			 <%end%>			
+    				//rotateZ: "45deg" this came with it..for 3d transforms
+				}); 	
+  			
+  		}		
+  
+  
+  		
+  }); //end of the the button_1 animation			
+			
+			
+			
+//---------THIS IS BUTTON 2 CLICK-----------------------------			
+			
 			
 			$("#button_2").click(function(){
 				
@@ -168,7 +219,7 @@ function lightitup() {
 				
 				currentButton = currentButton + 1
 				
-				if (currentButton == 2 && activeBtn3 == false) {
+				if (activeBtn1 == true && activeBtn3 == false) {  
 					
 					$("#testies").velocity({
    				 translateZ: 0, // Force HA by animating a 3D property
@@ -182,11 +233,11 @@ function lightitup() {
 				}
 				
 				
-				if (currentButton == 3) {
+				if (currentButton == 3 && activeBtn4 == flase) {  
 					
 					$("#testies").velocity({
    				 translateZ: 0, // Force HA by animating a 3D property
-   				 translateY: "300%",
+   				 translateY: "310%",
     				//rotateZ: "45deg" this came with it..for 3d transforms
 					}); 	
 				
@@ -197,27 +248,47 @@ function lightitup() {
 			
 			});
 			
+			
+			
+//---------THIS IS BUTTON 3 CLICK-----------------------------	
+		
 			$("#button_3").click(function(){
 				
-				activeBtn3 == true
+				activeBtn3 = true
 				
 				currentButton = currentButton + 1
 				
-				if (currentButton == 3) {
+				if (activeBtn3 == true && activeBtn1 == true && activeBtn2 == true ) {
 					
 					$("#testies").velocity({
    				 translateZ: 0, 	// Force HA by animating a 3D property
-   				 translateY: "300%",
+   				 translateY: "310%",
     				//rotateZ: "45deg" this came with it..for 3d transforms
+					}); 	
+				
+				}
+			
+				if (activeBtn4 == true && activeBtn1 == true && activeBtn2 == true) {
+					
+					$("#testies").velocity({
+   				 translateZ: 0, 	// Force HA by animating a 3D property
+   				<% if buttons_go_right == true %>
+   				 translateX: "120%",
+    			<% else %>
+					 translateX: "-120%",
+					<% end %>	
 					}); 	
 				
 				}
 			
 			});
 			
+
+//---------THIS IS BUTTON 4 CLICK-----------------------------
+
 				$("#button_4").click(function(){
 				
-				activeBtn4 == true
+				activeBtn4 = true
 				
 				currentButton = currentButton + 1
 				
@@ -226,7 +297,7 @@ function lightitup() {
 					
 					$("#testies").velocity({
    				 translateZ: 0, // Force HA by animating a 3D property
-   			<% if @correct_array[2] - @correct_array[1] == 6%> // going right
+   			<% if buttons_go_right == true%> // going right
    				 translateX: "120%",
     		<% else %>		
     	  	translateX: "-120%",
@@ -239,9 +310,12 @@ function lightitup() {
 			});
 			
 			
+
+//---------THIS IS BUTTON 5 CLICK-----------------------------
+
 			$("#button_5").click(function(){
 				
-				activeBtn5 == true
+				activeBtn5 = true
 				
 				currentButton = currentButton + 1
 				
@@ -250,11 +324,18 @@ function lightitup() {
 					
 					$("#testies").velocity({
    				 translateZ: 0, // Force HA by animating a 3D property
-   			<% if @correct_array[2] - @correct_array[1] == 6%> // going right
-   				 translateX: "225%",
-    		<% else %>		
-    	  	translateX: "-225%",
-    	  <% end %>
+   			<% if buttons_go_down == 5 %>
+   			  	<%buttons_go_right = nil %> // this is to be a tricky butthole and stop the next two if-statements
+   			  	translateY:'415%',
+   			  <%end%>	
+   			  
+   			  <%if buttons_go_right == true %> 
+   			   translateX: "235%",
+    			<%end%>
+    			
+    			<%if buttons_go_right == false %>	
+					translateX: "-235%",
+					<%end%>
     				
 					}); 	
 				
@@ -262,9 +343,12 @@ function lightitup() {
 			
 			});
 			
+
+//---------THIS IS BUTTON 6 CLICK-----------------------------
+
 				$("#button_6").click(function(){
 				
-				activeBtn6 == true
+				activeBtn6 = true
 				
 				currentButton = currentButton + 1
 				
@@ -273,11 +357,26 @@ function lightitup() {
 					
 					$("#testies").velocity({
    				 translateZ: 0, // Force HA by animating a 3D property
-   			<% if @correct_array[2] - @correct_array[1] == 6%> // going right
-   				 translateX: "325%",
-    		<% else %>		
-    	  	translateX: "-325%",
-    	  <% end %>
+   				
+   				
+   				 <% if buttons_go_down == 5 %> //this is for when the L is on 5 and the 6th button is the last button
+						<%buttons_go_right = nil%>   			  	
+   			  	translateY:'540%',
+   			  <%end%>	
+   				
+   				<% if buttons_go_down == 6 %>
+   			  	<%buttons_go_right = nil %> // this is to be a tricky butthole and stop the next two if-statements
+   			  	translateY:'415%',
+   			  <%end%>	
+   			  
+   			  <%if buttons_go_right == true %> 
+   			   translateX: "350%",
+    			<%end%>
+    			
+    			<%if buttons_go_right == false %>	
+					translateX: "-350%",
+					<%end%>
+    				
     				
 					}); 	
 				
@@ -285,22 +384,43 @@ function lightitup() {
 			
 			});
 			
+
+
+//---------THIS IS BUTTON 7 CLICK-----------------------------
+
 				$("#button_7").click(function(){
 				
-				activeBtn7 == true
+				activeBtn7 = true
 				
 				currentButton = currentButton + 1
+				
+				
+			
+				
 				
 				if (currentButton == 7) {
 					
 					
 					$("#testies").velocity({
    				 translateZ: 0, // Force HA by animating a 3D property
-   			<% if @correct_array[2] - @correct_array[1] == 6%> // going right
-   				 translateX: "425%",
-    		<% else %>		
-    	  	translateX: "-425%",
-    	  <% end %>
+   				
+   				
+   				 <% if buttons_go_down == 6 %> //this is for when the L is on 6 and the 7th button is the last button
+						<%buttons_go_right = nil%>   			  	
+   			  	translateY:'540%',
+   			  <%end%>	
+   				
+   				<% if buttons_go_down == 7 %>
+   			  	<%buttons_go_right = nil %> // this is to be a tricky butthole and stop the next two if statements
+   			  	translateY:'415%',
+   			  <%end%>	
+   			  
+   			  <%if buttons_go_right == true %> 
+   			   translateX: "465%",
+    			<%end%>
+    			<%if buttons_go_right == false %>	
+					translateX: "-465%",
+					<%end%>
     				
 					}); 	
 				
@@ -308,9 +428,12 @@ function lightitup() {
 			
 			});
 			
+
+//---------THIS IS BUTTON 8 CLICK-----------------------------
+
 				$("#button_8").click(function(){
 				
-				activeBtn8 == true
+				activeBtn8 = true
 				
 				currentButton = currentButton + 1
 				
@@ -319,10 +442,23 @@ function lightitup() {
 					
 					$("#testies").velocity({
    				 translateZ: 0, // Force HA by animating a 3D property   #if it is going right and the button is directly after the last
-   			  <%if please_work(@correct_array)%> 
-   			   translateX: "<%=hello_dare(hi, @correct_array)%>",
-    			<%else%>	
-					translateY: "400%",
+   			  
+   			  
+   			  <% if buttons_go_down == 7 %> //this is for when the L is on 7 and the 8th button is the last button
+						<%buttons_go_right = nil%>   			  	
+   			  	translateY:'540%',
+   			  <%end%>	
+   			  
+   			  <% if buttons_go_down == 8 %>
+   			  	<%buttons_go_right = nil %> // this is to be a tricky butthole and stop the next two if statements
+   			  	translateY:'415%',
+   			  <%end%>	
+   			  
+   			  <%if buttons_go_right == true %> 
+   			   translateX: "585%",
+    			<%end%>
+    			<%if buttons_go_right == false %>	
+					translateX: "-585%",
 					<%end%>
 					}); 	
 				
@@ -330,9 +466,12 @@ function lightitup() {
 			
 			});
 			
+
+//---------THIS IS BUTTON 9 CLICK-----------------------------
+
 			$("#button_9").click(function(){
 				
-				activeBtn9 == true
+				activeBtn9 = true
 				
 				currentButton = currentButton + 1
 				
@@ -341,9 +480,11 @@ function lightitup() {
 					
 					$("#testies").velocity({
    				 translateZ: 0, // Force HA by animating a 3D property
-   			
-   				 translateY: "400%",
-    		
+   				<%if buttons_go_down == 9 %>
+   				 translateY: "415%",
+   				<%else%>
+   				 translateY: "530%",
+    			<%end%>
     				
 					}); 	
 				
@@ -352,7 +493,7 @@ function lightitup() {
 			});
 					$("#button_10").click(function(){
 				
-				activeBtn10 == true
+				activeBtn10 = true
 				
 				currentButton = currentButton + 1
 				
@@ -362,7 +503,7 @@ function lightitup() {
 					$("#testies").velocity({
    				 translateZ: 0, // Force HA by animating a 3D property
    			
-   				 translateY: "500%",
+   				 translateY: "530%",
     		
     				
 					}); 	
